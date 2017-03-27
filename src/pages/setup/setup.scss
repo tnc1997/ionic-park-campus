@@ -1,0 +1,35 @@
+page-setup {
+  ion-slides ion-slide:not(:first-child):not(:last-child) {
+    fieldset {
+      overflow-y: scroll;
+    }
+
+    form {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+
+      fieldset {
+        flex: 1;
+        margin: 0 0 22.5px 0;
+      }
+    }
+
+    h1 {
+      flex: 0;
+    }
+
+    .slide-zoom {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding-top: 15px;
+    }
+  }
+
+  .slides-ios, .slides-md {
+    fieldset {
+      border-radius: 4px;
+    }
+  }
+}

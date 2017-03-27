@@ -1,0 +1,70 @@
+<ion-content padding>
+  <ion-slides pager paginationType="progress" (ionSlideDidChange)="onSlideChanged()">
+    <ion-slide>
+      <h1 class="slide-title">Welcome To Park Campus!</h1>
+      <button ion-button (click)="goToNext()" large clear icon-right>Start<ion-icon name="arrow-forward"></ion-icon></button>
+    </ion-slide>
+    <ion-slide>
+      <h1 class="slide-title">Create Modules</h1>
+      <form [formGroup]="createModule" (ngSubmit)="onCreateModule()">
+        <fieldset>
+          <ion-item>
+            <ion-label>Code</ion-label>
+            <ion-input text-right formControlName="code" type="text"></ion-input>
+          </ion-item>
+          <br />
+          <ion-item>
+            <ion-label>Name</ion-label>
+            <ion-input text-right formControlName="name" type="text"></ion-input>
+          </ion-item>
+        </fieldset>
+        <button ion-button block [disabled]="!createModule.valid" type="submit">Create</button>
+      </form>
+    </ion-slide>
+    <ion-slide>
+      <h1 class="slide-title">Create Lectures</h1>
+      <form [formGroup]="createLecture" (ngSubmit)="onCreateLecture()">
+        <fieldset>
+          <ion-item>
+            <ion-label>Module</ion-label>
+            <ion-select formControlName="module">
+              <ion-option *ngFor="let module of currentModules" value={{module.code}}>{{module.name}}</ion-option>
+            </ion-select>
+          </ion-item>
+          <br />
+          <ion-item>
+            <ion-label>Lecturer</ion-label>
+            <ion-input text-right formControlName="lecturer" type="text"></ion-input>
+          </ion-item>
+          <br />
+          <ion-item>
+            <ion-label>Building</ion-label>
+            <ion-select formControlName="building">
+              <ion-option *ngFor="let building of currentBuildings" value={{building.code}}>{{building.name}}</ion-option>
+            </ion-select>
+          </ion-item>
+          <br />
+          <ion-item>
+            <ion-label>Room</ion-label>
+            <ion-input text-right formControlName="room" type="text"></ion-input>
+          </ion-item>
+          <br />
+          <ion-item>
+            <ion-label>Start</ion-label>
+            <ion-datetime formControlName="startTime" displayFormat="HH:mm" pickerFormat="HH mm"></ion-datetime>
+          </ion-item>
+          <br />
+          <ion-item>
+            <ion-label>Finish</ion-label>
+            <ion-datetime formControlName="finishTime" displayFormat="HH:mm" pickerFormat="HH mm"></ion-datetime>
+          </ion-item>
+        </fieldset>
+        <button ion-button block [disabled]="!createLecture.valid" type="submit">Create</button>
+      </form>
+    </ion-slide>
+    <ion-slide>
+      <h1 class="slide-title">Ready To Go?</h1>
+      <button ion-button (click)="goToHome()" large clear icon-right>Continue<ion-icon name="arrow-forward"></ion-icon></button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

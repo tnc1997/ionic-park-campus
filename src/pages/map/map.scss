@@ -1,0 +1,18 @@
+page-map {
+  #building-select {
+    flex: 0;
+  }
+
+  #google-map {
+    flex: 1;
+  }
+
+  .scroll-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sebm-google-map-container {
+    height: 100%;
+  }
+}
