@@ -20,6 +20,14 @@ export class Setup {
   buildings: Building[];
   modules: Module[];
 
+  days = [
+    {value: 0, name: "Monday"},
+    {value: 1, name: "Tuesday"},
+    {value: 2, name: "Wednesday"},
+    {value: 3, name: "Thursday"},
+    {value: 4, name: "Friday"}
+  ];
+
   constructor(public navCtrl: NavController, public menuCtrl: MenuController, public formBuilder: FormBuilder, public buildingProvider: BuildingProvider, public lectureProvider: LectureProvider, public moduleProvider: ModuleProvider) {
     this.menuCtrl.enable(false);
 
@@ -31,6 +39,7 @@ export class Setup {
       lecturer: ["", Validators.required],
       building: ["", Validators.required],
       room: ["", Validators.required],
+      day: ["", Validators.required],
       startTime: ["", Validators.required],
       finishTime: ["", Validators.required]
     });
@@ -51,7 +60,7 @@ export class Setup {
   }
 
   onCreateLecture() {
-    this.lectureProvider.createLecture(new Lecture(this.createLecture.value.module, this.createLecture.value.lecturer, this.createLecture.value.building, this.createLecture.value.room, this.createLecture.value.startTime, this.createLecture.value.finishTime));
+    this.lectureProvider.createLecture(new Lecture(this.createLecture.value.module, this.createLecture.value.lecturer, this.createLecture.value.building, this.createLecture.value.room, this.createLecture.value.day, this.createLecture.value.startTime, this.createLecture.value.finishTime));
 
     this.createLecture.reset();
   }

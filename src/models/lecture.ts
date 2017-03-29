@@ -3,14 +3,16 @@ import {Module} from './module';
 
 export class Lecture {
   private _building: Building;
+  private _day: String;
   private _finishTime: Date;
   private _module: Module;
   private _lecturer: String;
   private _room: String;
   private _startTime: Date;
 
-  constructor(module: Module, lecturer: String, building: Building, room: String, startTime: Date, finishTime: Date) {
+  constructor(module: Module, lecturer: String, building: Building, room: String, day: String, startTime: Date, finishTime: Date) {
     this.building = building;
+    this.day = day;
     this.finishTime = finishTime;
     this.module = module;
     this.lecturer = lecturer;
@@ -24,6 +26,14 @@ export class Lecture {
 
   set building(value: Building) {
     this._building = value;
+  }
+
+  get day(): String {
+    return this._day;
+  }
+
+  set day(value: String) {
+    this._day = value;
   }
 
   get finishTime(): Date {

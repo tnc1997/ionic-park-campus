@@ -50,6 +50,13 @@
           </ion-item>
           <br />
           <ion-item>
+            <ion-label>Day</ion-label>
+            <ion-select formControlName="day">
+              <ion-option *ngFor="let day of days" value={{day.value}}>{{day.name}}</ion-option>
+            </ion-select>
+          </ion-item>
+          <br />
+          <ion-item>
             <ion-label>Start</ion-label>
             <ion-datetime formControlName="startTime" displayFormat="HH:mm" pickerFormat="HH mm"></ion-datetime>
           </ion-item>

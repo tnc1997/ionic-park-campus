@@ -25,7 +25,7 @@ export class LectureProvider {
     this.storage.get('_lectures').then((values) => {
       if (values != null) {
         for (let i = 0; i < values.length; i++) {
-          let value = new Lecture(values[i]._module, values[i]._lecturer, values[i]._building, values[i]._room, values[i]._startTime, values[i]._finishTime);
+          let value = new Lecture(values[i]._module, values[i]._lecturer, values[i]._building, values[i]._room, values[i]._day, values[i]._startTime, values[i]._finishTime);
 
           if (lecture.building == value.building && lecture.finishTime == value.finishTime && lecture.module == value.module && lecture.lecturer == value.lecturer && lecture.room == value.room && lecture.startTime == value.startTime) {
             values.splice(i, 1);
@@ -43,7 +43,7 @@ export class LectureProvider {
     this.storage.get('_lectures').then((values) => {
       if (values != null) {
         for (let i = 0; i < values.length; i++) {
-          lectures.push(new Lecture(values[i]._module, values[i]._lecturer, values[i]._building, values[i]._room, values[i]._startTime, values[i]._finishTime));
+          lectures.push(new Lecture(values[i]._module, values[i]._lecturer, values[i]._building, values[i]._room, values[i]._day, values[i]._startTime, values[i]._finishTime));
         }
       }
     });
