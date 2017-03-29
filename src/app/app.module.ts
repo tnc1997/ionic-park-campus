@@ -7,9 +7,9 @@ import {Home} from '../pages/home/home';
 import {Map} from '../pages/map/map';
 import {Setup} from '../pages/setup/setup';
 import {AgmCoreModule} from 'angular2-google-maps/core';
-import {Buildings} from '../providers/buildings';
-import {Lectures} from '../providers/lectures';
-import {Modules} from '../providers/modules';
+import {BuildingProvider} from '../providers/building-provider/building-provider';
+import {LectureProvider} from '../providers/lecture-provider/lecture-provider';
+import {ModuleProvider} from '../providers/module-provider/module-provider';
 
 let pages = [
   MyApp,
@@ -28,9 +28,9 @@ export function entryComponents() {
 
 export function providers() {
   return [
-    Buildings,
-    Lectures,
-    Modules,
+    BuildingProvider,
+    LectureProvider,
+    ModuleProvider,
 
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

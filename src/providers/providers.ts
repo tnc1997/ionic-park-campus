@@ -1,9 +1,9 @@
-import {Buildings} from './buildings';
-import {Lectures} from './lectures';
-import {Modules} from './modules';
+import {BuildingProvider} from './building-provider/building-provider';
+import {LectureProvider} from './lecture-provider/lecture-provider';
+import {ModuleProvider} from './module-provider/module-provider';
 
 export {
-  Buildings,
-  Lectures,
-  Modules
+  BuildingProvider,
+  LectureProvider,
+  ModuleProvider
 }

@@ -28,7 +28,7 @@
           <ion-item>
             <ion-label>Module</ion-label>
             <ion-select formControlName="module">
-              <ion-option *ngFor="let module of currentModules" value={{module.code}}>{{module.name}}</ion-option>
+              <ion-option *ngFor="let module of modules" value={{module.code}}>{{module.name}}</ion-option>
             </ion-select>
           </ion-item>
           <br />
@@ -40,7 +40,7 @@
           <ion-item>
             <ion-label>Building</ion-label>
             <ion-select formControlName="building">
-              <ion-option *ngFor="let building of currentBuildings" value={{building.code}}>{{building.name}}</ion-option>
+              <ion-option *ngFor="let building of buildings" value={{building.code}}>{{building.name}}</ion-option>
             </ion-select>
           </ion-item>
           <br />

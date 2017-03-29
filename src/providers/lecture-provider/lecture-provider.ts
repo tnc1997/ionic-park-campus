@@ -1,15 +1,15 @@
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 import {Storage} from '@ionic/storage';
-import {Lecture} from '../models/lecture';
+import {Lecture} from '../../models/lecture';
 
 @Injectable()
-export class Lectures {
+export class LectureProvider {
   constructor(public http: Http, public storage: Storage) {
 
   }
 
-  create(lecture: Lecture) {
+  createLecture(lecture: Lecture) {
     this.storage.get('_lectures').then((values) => {
       if (values == null) {
         this.storage.set('_lectures', [lecture]);
@@ -21,7 +21,7 @@ export class Lectures {
     });
   }
 
-  delete(lecture: Lecture) {
+  deleteLecture(lecture: Lecture) {
     this.storage.get('_lectures').then((values) => {
       if (values != null) {
         for (let i = 0; i < values.length; i++) {

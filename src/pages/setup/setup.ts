@@ -2,7 +2,7 @@ import {Component, ViewChild} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MenuController, NavController, Slides} from 'ionic-angular';
 import {Home} from '../home/home';
-import {Buildings, Lectures, Modules} from '../../providers/providers';
+import {BuildingProvider, LectureProvider, ModuleProvider} from '../../providers/providers';
 import {Building} from '../../models/building';
 import {Lecture} from '../../models/lecture';
 import {Module} from '../../models/module';
@@ -17,14 +17,14 @@ export class Setup {
   createModule: FormGroup;
   createLecture: FormGroup;
 
-  currentBuildings: Building[];
-  currentModules: Module[];
+  buildings: Building[];
+  modules: Module[];
 
-  constructor(public navCtrl: NavController, public menuCtrl: MenuController, public formBuilder: FormBuilder, public buildings: Buildings, public lectures: Lectures, public modules: Modules) {
+  constructor(public navCtrl: NavController, public menuCtrl: MenuController, public formBuilder: FormBuilder, public buildingProvider: BuildingProvider, public lectureProvider: LectureProvider, public moduleProvider: ModuleProvider) {
     this.menuCtrl.enable(false);
 
-    this.currentBuildings = buildings.findAll();
-    this.currentModules = modules.findAll();
+    this.buildings = buildingProvider.findAll();
+    this.modules = moduleProvider.findAll();
 
     this.createLecture = formBuilder.group({
       module: ["", Validators.required],
@@ -51,20 +51,20 @@ export class Setup {
   }
 
   onCreateLecture() {
-    this.lectures.create(new Lecture(this.createLecture.value.module, this.createLecture.value.lecturer, this.createLecture.value.building, this.createLecture.value.room, this.createLecture.value.startTime, this.createLecture.value.finishTime));
+    this.lectureProvider.createLecture(new Lecture(this.createLecture.value.module, this.createLecture.value.lecturer, this.createLecture.value.building, this.createLecture.value.room, this.createLecture.value.startTime, this.createLecture.value.finishTime));
 
     this.createLecture.reset();
   }
 
   onCreateModule() {
-    this.modules.create(new Module(this.createModule.value.code, this.createModule.value.name));
+    this.moduleProvider.createModule(new Module(this.createModule.value.code, this.createModule.value.name));
 
     this.createModule.reset();
   }
 
   onSlideChanged() {
     if (this.slides.getActiveIndex() == 2) {
-      this.currentModules = this.modules.findAll();
+      this.modules = this.moduleProvider.findAll();
     }
   }
 }
