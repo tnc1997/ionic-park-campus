@@ -1,15 +1,15 @@
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 import {Storage} from '@ionic/storage';
-import {Module} from '../models/module';
+import {Module} from '../../models/module';
 
 @Injectable()
-export class Modules {
+export class ModuleProvider {
   constructor(public http: Http, public storage: Storage) {
 
   }
 
-  create(module: Module) {
+  createModule(module: Module) {
     this.storage.get('_modules').then((values) => {
       if (values == null) {
         this.storage.set('_modules', [module]);
@@ -21,7 +21,7 @@ export class Modules {
     });
   }
 
-  delete(module: Module) {
+  deleteModule(module: Module) {
     this.storage.get('_modules').then((values) => {
       if (values != null) {
         for (let i = 0; i < values.length; i++) {

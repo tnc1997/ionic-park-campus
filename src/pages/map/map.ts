@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
-import {Buildings} from '../../providers/providers';
+import {BuildingProvider} from '../../providers/providers';
 import {Building} from '../../models/building';
 
 @Component({
@@ -12,14 +12,14 @@ export class Map {
   lng: Number = -2.08864;
   zoom: Number = 16;
 
-  currentBuildings: Building[];
+  buildings: Building[];
 
-  constructor(public navCtrl: NavController, public buildings: Buildings) {
-    this.currentBuildings = buildings.findAll();
+  constructor(public navCtrl: NavController, public buildingProvider: BuildingProvider) {
+    this.buildings = buildingProvider.findAll();
   }
 
   onBuildingChange(buildingCode: string) {
-    for (let building of this.currentBuildings) {
+    for (let building of this.buildings) {
       if (buildingCode == building.code) {
         this.lat = building.lat;
         this.lng = building.lng;
