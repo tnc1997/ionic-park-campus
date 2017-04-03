@@ -10,6 +10,7 @@ import {AgmCoreModule} from 'angular2-google-maps/core';
 import {BuildingProvider} from '../providers/building-provider/building-provider';
 import {LectureProvider} from '../providers/lecture-provider/lecture-provider';
 import {ModuleProvider} from '../providers/module-provider/module-provider';
+import {SettingProvider} from '../providers/setting-provider/setting-provider';
 
 let pages = [
   MyApp,
@@ -31,6 +32,7 @@ export function providers() {
     BuildingProvider,
     LectureProvider,
     ModuleProvider,
+    SettingProvider,
 
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
