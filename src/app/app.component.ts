@@ -5,7 +5,6 @@ import {Setting} from "../models/setting";
 import {Home} from '../pages/home/home';
 import {Map} from '../pages/map/map';
 import {InstallationPage, MainPage} from '../pages/pages';
-import {Setup} from '../pages/setup/setup';
 import {SettingProvider} from '../providers/providers';
 
 @Component({
@@ -21,19 +20,20 @@ export class MyApp {
   constructor(public platform: Platform, public settingProvider: SettingProvider) {
     this.initializeApp();
 
-    if (this.settingProvider.findAll().length == 0) {
-      this.rootPage = InstallationPage;
-
-      this.settingProvider.createSetting(new Setting("setup", true));
-    } else {
-      this.rootPage = MainPage;
-    }
-
     this.pages = [
       {title: 'Home', component: Home},
-      {title: 'Map', component: Map},
-      {title: 'Setup', component: Setup}
+      {title: 'Map', component: Map}
     ];
+
+    this.settingProvider.findAll().then((values) => {
+      if (values == null) {
+        this.rootPage = InstallationPage;
+
+        this.settingProvider.createSetting(new Setting("setup", true));
+      } else {
+        this.rootPage = MainPage;
+      }
+    });
   }
 
   initializeApp() {

@@ -38,16 +38,6 @@ export class SettingProvider {
   }
 
   findAll() {
-    let settings = [];
-
-    this.storage.get('_settings').then((values) => {
-      if (values != null) {
-        for (let i = 0; i < values.length; i++) {
-          settings.push(new Setting(values[i]._key, values[i]._value));
-        }
-      }
-    });
-
-    return settings;
+    return this.storage.get('_settings');
   }
 }
