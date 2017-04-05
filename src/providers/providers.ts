@@ -1,7 +1,7 @@
-import {BuildingProvider} from './building-provider/building-provider';
-import {LectureProvider} from './lecture-provider/lecture-provider';
-import {ModuleProvider} from './module-provider/module-provider';
-import {SettingProvider} from './setting-provider/setting-provider';
+import {BuildingProvider} from './buildings';
+import {LectureProvider} from './lectures';
+import {ModuleProvider} from './modules';
+import {SettingProvider} from './settings';
 
 export {
   BuildingProvider,

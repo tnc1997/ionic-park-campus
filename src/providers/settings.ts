@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 import {Storage} from '@ionic/storage';
-import {Setting} from '../../models/setting';
+import {Setting} from '../models/setting';
 
 @Injectable()
 export class SettingProvider {

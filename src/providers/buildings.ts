@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Building} from '../../models/building';
+import {Building} from '../models/building';
 import 'rxjs/add/operator/map';
 
 @Injectable()
