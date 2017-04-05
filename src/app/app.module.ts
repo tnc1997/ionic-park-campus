@@ -7,10 +7,10 @@ import {Home} from '../pages/home/home';
 import {Map} from '../pages/map/map';
 import {Setup} from '../pages/setup/setup';
 import {AgmCoreModule} from 'angular2-google-maps/core';
-import {BuildingProvider} from '../providers/building-provider/building-provider';
-import {LectureProvider} from '../providers/lecture-provider/lecture-provider';
-import {ModuleProvider} from '../providers/module-provider/module-provider';
-import {SettingProvider} from '../providers/setting-provider/setting-provider';
+import {BuildingProvider} from '../providers/buildings';
+import {LectureProvider} from '../providers/lectures';
+import {ModuleProvider} from '../providers/modules';
+import {SettingProvider} from '../providers/settings';
 
 let pages = [
   MyApp,

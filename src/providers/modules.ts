@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 import {Storage} from '@ionic/storage';
-import {Module} from '../../models/module';
+import {Module} from '../models/module';
 
 @Injectable()
 export class ModuleProvider {

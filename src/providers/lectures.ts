@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 import {Storage} from '@ionic/storage';
-import {Lecture} from '../../models/lecture';
+import {Lecture} from '../models/lecture';
 
 @Injectable()
 export class LectureProvider {
