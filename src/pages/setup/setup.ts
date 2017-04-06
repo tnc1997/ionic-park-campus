@@ -32,7 +32,10 @@ export class Setup {
     this.menuCtrl.enable(false);
 
     this.buildings = buildingProvider.findAll();
-    this.modules = moduleProvider.findAll();
+
+    this.moduleProvider.findAll().then((values) => {
+      this.modules = <Array<Module>> values;
+    });
 
     this.createLecture = formBuilder.group({
       module: ["", Validators.required],
@@ -73,7 +76,9 @@ export class Setup {
 
   onSlideChanged() {
     if (this.slides.getActiveIndex() == 2) {
-      this.modules = this.moduleProvider.findAll();
+      this.moduleProvider.findAll().then((values) => {
+        this.modules = <Array<Module>> values;
+      });
     }
   }
 }

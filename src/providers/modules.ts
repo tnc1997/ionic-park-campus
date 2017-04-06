@@ -38,16 +38,20 @@ export class ModuleProvider {
   }
 
   findAll() {
-    let modules = [];
+    return new Promise(((resolve, reject) => {
+      this.storage.get('_modules').then((values) => {
+        let modules = [];
 
-    this.storage.get('_modules').then((values) => {
-      if (values != null) {
-        for (let i = 0; i < values.length; i++) {
-          modules.push(new Module(values[i]._code, values[i]._name));
+        if (values != null && values.length > 0) {
+          for (let i = 0; i < values.length; i++) {
+            modules.push(new Module(values[i]._code, values[i]._name));
+          }
         }
-      }
-    });
 
-    return modules;
+        resolve(modules);
+      }, (error) => {
+        reject(error);
+      });
+    }));
   }
 }

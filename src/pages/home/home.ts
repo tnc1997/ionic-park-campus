@@ -13,6 +13,8 @@ export class Home {
   days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 
   constructor(public navCtrl: NavController, public lectureProvider: LectureProvider) {
-    this.lectures = lectureProvider.findAll();
+    this.lectureProvider.findAll().then((values) => {
+      this.lectures = <Array<Lecture>> values;
+    });
   }
 }
