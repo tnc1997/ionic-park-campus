@@ -8,6 +8,19 @@
 </ion-header>
 
 <ion-content padding>
+  <h1 text-center>Next Lecture</h1>
+  <ion-card *ngFor="let nextLecture of nextLectures">
+    <ion-card-header>
+      <h1>{{nextLecture.module._code}}</h1>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <h2><ion-icon name="calendar" margin-right></ion-icon>{{days[nextLecture.day]}}</h2>
+        <h2><ion-icon name="clock" margin-right></ion-icon>{{nextLecture.startTime}} - {{nextLecture.finishTime}}</h2>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <h1 text-center>Other Lectures</h1>
   <ion-card *ngFor="let lecture of lectures">
     <ion-card-header>
       <h1>{{lecture.module._code}}</h1>
