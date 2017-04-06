@@ -63,7 +63,11 @@ export class Setup {
   }
 
   onCreateLecture() {
-    this.lectureProvider.createLecture(new Lecture(this.createLecture.value.module, this.createLecture.value.lecturer, this.createLecture.value.building, this.createLecture.value.room, this.createLecture.value.day, this.createLecture.value.startTime, this.createLecture.value.finishTime));
+    let lecture = [this.createLecture.value.lecturer, this.buildingProvider.findByCode(this.createLecture.value.building), this.createLecture.value.room, this.createLecture.value.day, this.createLecture.value.startTime, this.createLecture.value.finishTime];
+
+    this.moduleProvider.findByCode(this.createLecture.value.module).then((module: Module) => {
+      this.lectureProvider.createLecture(new Lecture(module, lecture[0], lecture[1], lecture[2], lecture[3], lecture[4], lecture[5]));
+    });
 
     this.createLecture.reset();
   }

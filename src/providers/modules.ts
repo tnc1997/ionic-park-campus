@@ -54,4 +54,24 @@ export class ModuleProvider {
       });
     }));
   }
+
+  findByCode(code: String) {
+    return new Promise(((resolve, reject) => {
+      this.storage.get('_modules').then((values) => {
+        let module;
+
+        if (values != null && values.length > 0) {
+          for (let i = 0; i < values.length; i++) {
+            if (values[i]._code == code) {
+              module = new Module(values[i]._code, values[i]._name);
+            }
+          }
+        }
+
+        resolve(module);
+      }, (error) => {
+        reject(error);
+      });
+    }));
+  }
 }
