@@ -8,5 +8,15 @@
 </ion-header>
 
 <ion-content padding>
-
+  <ion-card *ngFor="let lecture of lectures">
+    <ion-card-header>
+      <h1>{{lecture.module}}</h1>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <h2><ion-icon name="calendar" margin-right></ion-icon>{{days[lecture.day]}}</h2>
+        <h2><ion-icon name="clock" margin-right></ion-icon>{{lecture.startTime}} - {{lecture.finishTime}}</h2>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
