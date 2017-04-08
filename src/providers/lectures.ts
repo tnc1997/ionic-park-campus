@@ -38,16 +38,20 @@ export class LectureProvider {
   }
 
   findAll() {
-    let lectures = [];
+    return new Promise(((resolve, reject) => {
+      this.storage.get('_lectures').then((values) => {
+        let lectures = [];
 
-    this.storage.get('_lectures').then((values) => {
-      if (values != null) {
-        for (let i = 0; i < values.length; i++) {
-          lectures.push(new Lecture(values[i]._module, values[i]._lecturer, values[i]._building, values[i]._room, values[i]._day, values[i]._startTime, values[i]._finishTime));
+        if (values != null && values.length > 0) {
+          for (let i = 0; i < values.length; i++) {
+            lectures.push(new Lecture(values[i]._module, values[i]._lecturer, values[i]._building, values[i]._room, values[i]._day, values[i]._startTime, values[i]._finishTime));
+          }
         }
-      }
-    });
 
-    return lectures;
+        resolve(lectures);
+      }, (error) => {
+        reject(error);
+      });
+    }));
   }
 }

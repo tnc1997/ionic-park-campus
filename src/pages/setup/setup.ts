@@ -6,6 +6,7 @@ import {BuildingProvider, LectureProvider, ModuleProvider} from '../../providers
 import {Building} from '../../models/building';
 import {Lecture} from '../../models/lecture';
 import {Module} from '../../models/module';
+import {Time} from "../../models/time";
 
 @Component({
   selector: 'page-setup',
@@ -21,18 +22,21 @@ export class Setup {
   modules: Module[];
 
   days = [
-    {value: 0, name: "Monday"},
-    {value: 1, name: "Tuesday"},
-    {value: 2, name: "Wednesday"},
-    {value: 3, name: "Thursday"},
-    {value: 4, name: "Friday"}
+    {value: 1, name: "Monday"},
+    {value: 2, name: "Tuesday"},
+    {value: 3, name: "Wednesday"},
+    {value: 4, name: "Thursday"},
+    {value: 5, name: "Friday"}
   ];
 
   constructor(public navCtrl: NavController, public menuCtrl: MenuController, public formBuilder: FormBuilder, public buildingProvider: BuildingProvider, public lectureProvider: LectureProvider, public moduleProvider: ModuleProvider) {
     this.menuCtrl.enable(false);
 
     this.buildings = buildingProvider.findAll();
-    this.modules = moduleProvider.findAll();
+
+    this.moduleProvider.findAll().then((values) => {
+      this.modules = <Array<Module>> values;
+    });
 
     this.createLecture = formBuilder.group({
       module: ["", Validators.required],
@@ -60,7 +64,11 @@ export class Setup {
   }
 
   onCreateLecture() {
-    this.lectureProvider.createLecture(new Lecture(this.createLecture.value.module, this.createLecture.value.lecturer, this.createLecture.value.building, this.createLecture.value.room, this.createLecture.value.day, this.createLecture.value.startTime, this.createLecture.value.finishTime));
+    let lecture = [this.createLecture.value.lecturer, this.buildingProvider.findByCode(this.createLecture.value.building), this.createLecture.value.room, this.createLecture.value.day, new Time(this.createLecture.value.startTime), new Time(this.createLecture.value.finishTime)];
+
+    this.moduleProvider.findByCode(this.createLecture.value.module).then((module: Module) => {
+      this.lectureProvider.createLecture(new Lecture(module, lecture[0], lecture[1], lecture[2], lecture[3], lecture[4], lecture[5]));
+    });
 
     this.createLecture.reset();
   }
@@ -73,7 +81,9 @@ export class Setup {
 
   onSlideChanged() {
     if (this.slides.getActiveIndex() == 2) {
-      this.modules = this.moduleProvider.findAll();
+      this.moduleProvider.findAll().then((values) => {
+        this.modules = <Array<Module>> values;
+      });
     }
   }
 }

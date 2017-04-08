@@ -26,7 +26,7 @@ export class MyApp {
     ];
 
     this.settingProvider.findAll().then((values) => {
-      if (values == null) {
+      if (values == 0) {
         this.rootPage = InstallationPage;
 
         this.settingProvider.createSetting(new Setting("setup", true));

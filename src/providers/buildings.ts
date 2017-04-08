@@ -43,4 +43,16 @@ export class BuildingProvider {
   findAll() {
     return this.buildings;
   }
+
+  findByCode(code: String) {
+    let building;
+
+    for (let i = 0; i < this.buildings.length; i++) {
+      if (this.buildings[i].code == code) {
+        building = this.buildings[i];
+      }
+    }
+
+    return building;
+  }
 }
