@@ -5,6 +5,7 @@ import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
 import {MyApp} from './app.component';
 import {Home} from '../pages/home/home';
 import {Map} from '../pages/map/map';
+import {Settings} from '../pages/settings/settings';
 import {Setup} from '../pages/setup/setup';
 import {AgmCoreModule} from 'angular2-google-maps/core';
 import {BuildingProvider} from '../providers/buildings';
@@ -16,6 +17,7 @@ let pages = [
   MyApp,
   Home,
   Map,
+  Settings,
   Setup
 ];
 
