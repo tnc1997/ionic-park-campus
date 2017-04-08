@@ -2,6 +2,7 @@ import {Component }from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {Lecture} from '../../models/lecture';
 import {LectureProvider} from '../../providers/providers';
+import {Time} from "../../models/time";
 
 @Component({
   selector: 'page-home',
@@ -11,31 +12,38 @@ export class Home {
   lectures: Lecture[];
   nextLectures: Lecture[];
 
-  days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
   constructor(public navCtrl: NavController, public lectureProvider: LectureProvider) {
     this.lectureProvider.findAll().then((values) => {
       this.lectures = <Array<Lecture>> values;
 
-      let currentDay, currentDuration, currentTime = new Date().getTime(), optimalDuration = 7;
-
-      if (new Date().getDay() == 0) {
-        currentDay = 6;
-      } else {
-        currentDay = new Date().getDay() - 1;
-      }
+      let currentDate = new Date(), currentDuration = null;
 
       for (let i = 0; i < this.lectures.length; i++) {
-        if (this.lectures[i].day.valueOf() - currentDay < 0) {
-          currentDuration = 7 + (this.lectures[i].day.valueOf() - currentDay);
-        } else {
-          currentDuration = this.lectures[i].day.valueOf() - currentDay;
-        }
+        let startTime = JSON.parse(JSON.stringify(this.lectures[i].startTime));
+        startTime = new Time(startTime._hours + ":" + startTime._minutes);
 
-        if (currentDuration < optimalDuration) {
+        let lectureDate = Home.getNextDayOfWeek(currentDate, this.lectures[i].day);
+        lectureDate.setHours(startTime.hours);
+        lectureDate.setMinutes(startTime.minutes);
+        lectureDate.setSeconds(0);
+
+        if (currentDuration == null || currentDuration > (lectureDate.getTime() - currentDate.getTime())) {
           this.nextLectures = [this.lectures[i]];
+
+          currentDuration = lectureDate.getTime() - currentDate.getTime();
         }
       }
     });
+  }
+
+  // http://codereview.stackexchange.com/questions/33527/find-next-occurring-friday-or-any-dayofweek
+  static getNextDayOfWeek(date: Date, dayOfWeek: Number): Date {
+    let result = new Date(date.getTime());
+
+    result.setDate(date.getDate() + (7 + dayOfWeek.valueOf() - date.getDay()) % 7);
+
+    return result;
   }
 }

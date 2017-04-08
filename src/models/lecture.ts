@@ -1,16 +1,17 @@
 import {Building} from './building';
 import {Module} from './module';
+import {Time} from './time';
 
 export class Lecture {
   private _building: Building;
   private _day: Number;
-  private _finishTime: Date;
+  private _finishTime: Time;
   private _module: Module;
   private _lecturer: String;
   private _room: String;
-  private _startTime: Date;
+  private _startTime: Time;
 
-  constructor(module: Module, lecturer: String, building: Building, room: String, day: Number, startTime: Date, finishTime: Date) {
+  constructor(module: Module, lecturer: String, building: Building, room: String, day: Number, startTime: Time, finishTime: Time) {
     this.building = building;
     this.day = day;
     this.finishTime = finishTime;
@@ -36,11 +37,11 @@ export class Lecture {
     this._day = value;
   }
 
-  get finishTime(): Date {
+  get finishTime(): Time {
     return this._finishTime;
   }
 
-  set finishTime(value: Date) {
+  set finishTime(value: Time) {
     this._finishTime = value;
   }
 
@@ -68,11 +69,11 @@ export class Lecture {
     this._room = value;
   }
 
-  get startTime(): Date {
+  get startTime(): Time {
     return this._startTime;
   }
 
-  set startTime(value: Date) {
+  set startTime(value: Time) {
     this._startTime = value;
   }
 }

@@ -16,7 +16,7 @@
     <ion-card-content>
       <ion-list>
         <h2><ion-icon name="calendar" margin-right></ion-icon>{{days[nextLecture.day]}}</h2>
-        <h2><ion-icon name="clock" margin-right></ion-icon>{{nextLecture.startTime}} - {{nextLecture.finishTime}}</h2>
+        <h2><ion-icon name="clock" margin-right></ion-icon>{{nextLecture.startTime._time}} - {{nextLecture.finishTime._time}}</h2>
       </ion-list>
     </ion-card-content>
   </ion-card>
@@ -28,7 +28,7 @@
     <ion-card-content>
       <ion-list>
         <h2><ion-icon name="calendar" margin-right></ion-icon>{{days[lecture.day]}}</h2>
-        <h2><ion-icon name="clock" margin-right></ion-icon>{{lecture.startTime}} - {{lecture.finishTime}}</h2>
+        <h2><ion-icon name="clock" margin-right></ion-icon>{{lecture.startTime._time}} - {{lecture.finishTime._time}}</h2>
       </ion-list>
     </ion-card-content>
   </ion-card>
