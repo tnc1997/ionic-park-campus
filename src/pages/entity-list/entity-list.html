@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="createEntity()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>{{entity.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item-sliding *ngFor="let entity of entities">
+      <ion-item>
+        <h1 *ngIf="entity.hasOwnProperty('_code')">{{entity.code}}</h1>
+        <h1 *ngIf="entity.hasOwnProperty('_module')">{{entity.module._code}}</h1>
+        <h2 *ngIf="entity.hasOwnProperty('_code')">{{entity.name}}</h2>
+        <h2 *ngIf="entity.hasOwnProperty('_module')">{{days[entity.day]}}</h2>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="danger" (click)="deleteEntity(entity)">
+          <ion-icon name="trash"></ion-icon>Delete
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
