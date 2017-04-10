@@ -27,7 +27,7 @@ export class LectureProvider {
         for (let i = 0; i < values.length; i++) {
           let value = new Lecture(values[i]._module, values[i]._lecturer, values[i]._building, values[i]._room, values[i]._day, values[i]._startTime, values[i]._finishTime);
 
-          if (lecture.building == value.building && lecture.finishTime == value.finishTime && lecture.module == value.module && lecture.lecturer == value.lecturer && lecture.room == value.room && lecture.startTime == value.startTime) {
+          if (lecture.building.code == value.building.code && lecture.finishTime.time == value.finishTime.time && lecture.module.code == value.module.code && lecture.lecturer == value.lecturer && lecture.room == value.room && lecture.startTime.time == value.startTime.time) {
             values.splice(i, 1);
           }
         }

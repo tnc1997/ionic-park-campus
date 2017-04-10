@@ -10,6 +10,9 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-refresher (ionRefresh)="onRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <ion-list>
     <ion-item-sliding *ngFor="let entity of entities">
       <ion-item>

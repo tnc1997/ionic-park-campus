@@ -3,7 +3,8 @@ import {ModalController, NavController, NavParams} from 'ionic-angular';
 import {EntityCreate} from '../entity-create/entity-create';
 import {Lecture} from '../../models/lecture';
 import {Module} from '../../models/module';
-import {LectureProvider, ModuleProvider} from '../../providers/providers';
+import {Time} from '../../models/time';
+import {BuildingProvider, LectureProvider, ModuleProvider} from '../../providers/providers';
 
 @Component({
   selector: 'page-entity-list',
@@ -15,7 +16,7 @@ export class EntityList {
 
   days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public lectureProvider: LectureProvider, public moduleProvider: ModuleProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public buildingProvider: BuildingProvider, public lectureProvider: LectureProvider, public moduleProvider: ModuleProvider) {
     this.entity = navParams.get("entity");
     this.entities = [];
 
@@ -39,19 +40,19 @@ export class EntityList {
     let createModal = this.modalCtrl.create(EntityCreate, {entity: this.entity});
     createModal.onDidDismiss((entity) => {
       if (entity != null) {
-        console.log(entity);
+        switch (this.entity.name) {
+         case "Lectures":
+           this.moduleProvider.findByCode(entity.module).then((values) => {
+             this.lectureProvider.createLecture(new Lecture(<Module> values, entity.lecturer, this.buildingProvider.findByCode(entity.building), entity.room, entity.day, new Time(entity.startTime), new Time(entity.finishTime)));
+           });
+
+           break;
+         case "Modules":
+           this.moduleProvider.createModule(new Module(entity.code, entity.name));
+
+           break;
+        }
       }
-
-      /*switch (this.entity.name) {
-        case "Lectures":
-          this.lectureProvider.createLecture(entity);
-
-          break;
-        case "Modules":
-          this.moduleProvider.createModule(entity);
-
-          break;
-      }*/
     });
     createModal.present();
   }
@@ -67,5 +68,26 @@ export class EntityList {
 
         break;
     }
+  }
+
+  onRefresh(refresher) {
+    setTimeout(() => {
+      switch (this.entity.name) {
+        case "Lectures":
+          this.lectureProvider.findAll().then((values) => {
+            this.entities = <Array<Lecture>> values;
+          });
+
+          break;
+        case "Modules":
+          this.moduleProvider.findAll().then((values) => {
+            this.entities = <Array<Module>> values;
+          });
+
+          break;
+      }
+
+      refresher.complete();
+    }, 2000);
   }
 }
