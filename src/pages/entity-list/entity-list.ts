@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {ModalController, NavController, NavParams} from 'ionic-angular';
+import {AlertController, ModalController, NavController, NavParams} from 'ionic-angular';
 import {EntityCreate} from '../entity-create/entity-create';
 import {Lecture} from '../../models/lecture';
 import {Module} from '../../models/module';
@@ -16,7 +16,7 @@ export class EntityList {
 
   days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public buildingProvider: BuildingProvider, public lectureProvider: LectureProvider, public moduleProvider: ModuleProvider) {
+  constructor(public alertCtrl: AlertController, public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, public buildingProvider: BuildingProvider, public lectureProvider: LectureProvider, public moduleProvider: ModuleProvider) {
     this.entity = navParams.get("entity");
     this.entities = [];
 
@@ -64,7 +64,23 @@ export class EntityList {
 
         break;
       case "Modules":
-        this.moduleProvider.deleteModule(entity);
+        let alert = this.alertCtrl.create({
+          title: "Delete Module?",
+          message: "This will also delete the associated lecture.",
+          buttons: [
+            {
+              text: "Cancel",
+              role: "cancel"
+            },
+            {
+              text: "Delete",
+              handler: () => {
+                this.moduleProvider.deleteModule(entity);
+              }
+            }
+          ]
+        });
+        alert.present();
 
         break;
     }

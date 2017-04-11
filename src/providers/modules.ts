@@ -1,12 +1,16 @@
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 import {Storage} from '@ionic/storage';
+import {Lecture} from '../models/lecture';
 import {Module} from '../models/module';
+import {LectureProvider} from './providers';
 
 @Injectable()
 export class ModuleProvider {
-  constructor(public http: Http, public storage: Storage) {
+  lectureProvider: LectureProvider;
 
+  constructor(public http: Http, public storage: Storage) {
+    this.lectureProvider = new LectureProvider(http, storage);
   }
 
   createModule(module: Module) {
@@ -28,6 +32,10 @@ export class ModuleProvider {
           let value = new Module(values[i]._code, values[i]._name);
 
           if (module.code == value.code && module.name == value.name) {
+            this.lectureProvider.findByModule(module).then((values: Lecture) => {
+              this.lectureProvider.deleteLecture(values);
+            });
+
             values.splice(i, 1);
           }
         }
@@ -38,7 +46,7 @@ export class ModuleProvider {
   }
 
   findAll() {
-    return new Promise(((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       this.storage.get('_modules').then((values) => {
         let modules = [];
 
@@ -52,11 +60,11 @@ export class ModuleProvider {
       }, (error) => {
         reject(error);
       });
-    }));
+    });
   }
 
   findByCode(code: String) {
-    return new Promise(((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       this.storage.get('_modules').then((values) => {
         let module;
 
@@ -72,6 +80,6 @@ export class ModuleProvider {
       }, (error) => {
         reject(error);
       });
-    }));
+    });
   }
 }
