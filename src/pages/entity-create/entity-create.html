@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="cancel()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="done()" [disabled]="!createEntity.valid">
+        <ion-icon name="checkmark"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Create {{entity.name.substring(0, entity.name.length - 1)}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form *ngIf="entity.name == 'Modules'" [formGroup]="createEntity">
+    <ion-item>
+      <ion-label>Code</ion-label>
+      <ion-input text-right formControlName="code" type="text"></ion-input>
+    </ion-item>
+    <br />
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-input text-right formControlName="name" type="text"></ion-input>
+    </ion-item>
+  </form>
+  <form *ngIf="entity.name == 'Lectures'" [formGroup]="createEntity">
+    <ion-item>
+      <ion-label>Module</ion-label>
+      <ion-select formControlName="module">
+        <ion-option *ngFor="let module of modules" value={{module.code}}>{{module.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <br />
+    <ion-item>
+      <ion-label>Lecturer</ion-label>
+      <ion-input text-right formControlName="lecturer" type="text"></ion-input>
+    </ion-item>
+    <br />
+    <ion-item>
+      <ion-label>Building</ion-label>
+      <ion-select formControlName="building">
+        <ion-option *ngFor="let building of buildings" value={{building.code}}>{{building.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <br />
+    <ion-item>
+      <ion-label>Room</ion-label>
+      <ion-input text-right formControlName="room" type="text"></ion-input>
+    </ion-item>
+    <br />
+    <ion-item>
+      <ion-label>Day</ion-label>
+      <ion-select formControlName="day">
+        <ion-option *ngFor="let day of days" value={{day.value}}>{{day.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <br />
+    <ion-item>
+      <ion-label>Start</ion-label>
+      <ion-datetime formControlName="startTime" displayFormat="HH:mm" pickerFormat="HH mm"></ion-datetime>
+    </ion-item>
+    <br />
+    <ion-item>
+      <ion-label>Finish</ion-label>
+      <ion-datetime formControlName="finishTime" displayFormat="HH:mm" pickerFormat="HH mm"></ion-datetime>
+    </ion-item>
+  </form>
+</ion-content>

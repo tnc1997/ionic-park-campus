@@ -3,8 +3,11 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {IonicStorageModule} from '@ionic/storage';
 import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
 import {MyApp} from './app.component';
+import {EntityCreate} from '../pages/entity-create/entity-create';
+import {EntityList} from '../pages/entity-list/entity-list';
 import {Home} from '../pages/home/home';
 import {Map} from '../pages/map/map';
+import {Settings} from '../pages/settings/settings';
 import {Setup} from '../pages/setup/setup';
 import {AgmCoreModule} from 'angular2-google-maps/core';
 import {BuildingProvider} from '../providers/buildings';
@@ -14,8 +17,11 @@ import {SettingProvider} from '../providers/settings';
 
 let pages = [
   MyApp,
+  EntityCreate,
+  EntityList,
   Home,
   Map,
+  Settings,
   Setup
 ];
 
