@@ -9,4 +9,5 @@
 
 <ion-content padding>
   <button ion-button block margin-bottom *ngFor="let entity of entities" (click)="openEntity(entity)">{{entity.name}}</button>
+  <button ion-button block color="danger" (click)="eraseData()">Erase Data</button>
 </ion-content>

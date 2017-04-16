@@ -2,11 +2,12 @@ import {Component, ViewChild} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MenuController, NavController, Slides} from 'ionic-angular';
 import {Home} from '../home/home';
-import {BuildingProvider, LectureProvider, ModuleProvider} from '../../providers/providers';
+import {BuildingProvider, LectureProvider, ModuleProvider, SettingProvider} from '../../providers/providers';
 import {Building} from '../../models/building';
 import {Lecture} from '../../models/lecture';
 import {Module} from '../../models/module';
-import {Time} from "../../models/time";
+import {Time} from '../../models/time';
+import {Setting} from '../../models/setting';
 
 @Component({
   selector: 'page-setup',
@@ -29,7 +30,7 @@ export class Setup {
     {value: 5, name: "Friday"}
   ];
 
-  constructor(public navCtrl: NavController, public menuCtrl: MenuController, public formBuilder: FormBuilder, public buildingProvider: BuildingProvider, public lectureProvider: LectureProvider, public moduleProvider: ModuleProvider) {
+  constructor(public navCtrl: NavController, public menuCtrl: MenuController, public formBuilder: FormBuilder, public buildingProvider: BuildingProvider, public lectureProvider: LectureProvider, public moduleProvider: ModuleProvider, public settingProvider: SettingProvider) {
     this.menuCtrl.enable(false);
 
     this.buildings = buildingProvider.findAll();
@@ -58,6 +59,8 @@ export class Setup {
   }
 
   goToHome() {
+    this.settingProvider.createSetting(new Setting("setup", true));
+
     this.menuCtrl.enable(true);
 
     this.navCtrl.setRoot(Home);
