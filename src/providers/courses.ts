@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Http,} from '@angular/http';
-import {Course} from '../models/course';
+import {Http} from '@angular/http';
 import {Api} from './api';
 import 'rxjs/add/operator/map';
 
@@ -11,6 +10,6 @@ export class CourseProvider {
   }
 
   queryCourses(params?: any) {
-    return this.api.getEntity("/courses", params).map((response) => response.json());
+    return this.api.getEntity("courses", params).map(res => res.json());
   }
 }
