@@ -1,5 +1,6 @@
 import {Component }from '@angular/core';
 import {NavController} from 'ionic-angular';
+import {CourseDetail} from '../course-detail/course-detail';
 import {Course} from '../../models/course';
 import {BuildingProvider, CourseProvider} from '../../providers/providers';
 
@@ -15,6 +16,12 @@ export class CourseList {
       for (let i = 0; i < values.length; i++) {
         this.courses.push(new Course(values[i].course_id, values[i].course_name, values[i].course_synopsis, values[i].course_description, buildingProvider.findByCode("ww")));
       }
+    });
+  }
+
+  onClickCourse(course) {
+    this.navCtrl.push(CourseDetail, {
+      course: course
     });
   }
 }

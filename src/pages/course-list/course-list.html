@@ -9,7 +9,7 @@
 
 <ion-content padding>
   <ion-list>
-    <button ion-item *ngFor="let course of courses">
+    <button ion-item *ngFor="let course of courses" (click)="onClickCourse(course)">
       <h2><strong>{{course.name}}</strong></h2>
       <div class="item-text-wrap" [innerHtml]="course.synopsis"></div>
     </button>

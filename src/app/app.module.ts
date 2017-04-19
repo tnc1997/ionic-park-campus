@@ -3,6 +3,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {IonicStorageModule} from '@ionic/storage';
 import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
 import {MyApp} from './app.component';
+import {CourseDetail} from '../pages/course-detail/course-detail';
 import {CourseList} from '../pages/course-list/course-list';
 import {EntityCreate} from '../pages/entity-create/entity-create';
 import {EntityList} from '../pages/entity-list/entity-list';
@@ -20,6 +21,7 @@ import {SettingProvider} from '../providers/settings';
 
 let pages = [
   MyApp,
+  CourseDetail,
   CourseList,
   EntityCreate,
   EntityList,
