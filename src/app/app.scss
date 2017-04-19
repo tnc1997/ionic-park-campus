@@ -28,6 +28,12 @@ a {
   padding: 0;
 }
 
+.item-text-wrap {
+  overflow: inherit;
+  text-overflow: inherit;
+  white-space: normal;
+}
+
 .input-cover {
   position: static;
 }
