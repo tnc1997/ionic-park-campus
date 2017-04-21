@@ -15,14 +15,18 @@ export class Map {
   buildings: Building[];
 
   constructor(public navCtrl: NavController, public buildingProvider: BuildingProvider) {
-    this.buildings = buildingProvider.findAll();
+    buildingProvider.queryBuildings().then((values) => {
+      this.buildings = <Array<Building>> values;
+    });
   }
 
-  onBuildingChange(buildingCode: string) {
-    for (let building of this.buildings) {
-      if (buildingCode == building.code) {
-        this.lat = building.lat;
-        this.lng = building.lng;
+  onBuildingChange(buildingId: Number) {
+    for (let i = 0; i < this.buildings.length; i++) {
+      let building: Building = this.buildings[i];
+
+      if (buildingId == building.id) {
+        this.lat = Number(building.lat + "");
+        this.lng = Number(building.lng + "");
         this.zoom = 19;
 
         break;

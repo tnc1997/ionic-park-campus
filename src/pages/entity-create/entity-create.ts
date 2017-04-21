@@ -26,7 +26,9 @@ export class EntityCreate {
   ];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public formBuilder: FormBuilder, public buildingProvider: BuildingProvider, public moduleProvider: ModuleProvider) {
-    this.buildings = buildingProvider.findAll();
+    buildingProvider.queryBuildings().then((values) => {
+      this.buildings = <Array<Building>> values;
+    });
 
     this.moduleProvider.findAll().then((values) => {
       this.modules = <Array<Module>> values;

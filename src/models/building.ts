@@ -1,11 +1,13 @@
 export class Building {
   private _code: String;
+  private _id: Number;
   private _lat: Number = 51.88694;
   private _lng: Number = -2.08864;
   private _name: String;
 
-  constructor(code: String, name: String, lat: Number, lng: Number) {
+  constructor(id: Number, code: String, name: String, lat: Number, lng: Number) {
     this.code = code;
+    this.id = id;
     this.lat = lat;
     this.lng = lng;
     this.name = name;
@@ -17,6 +19,14 @@ export class Building {
 
   set code(value: String) {
     this._code = value;
+  }
+
+  get id(): Number {
+    return this._id;
+  }
+
+  set id(value: Number) {
+    this._id = value;
   }
 
   get lat(): Number {
