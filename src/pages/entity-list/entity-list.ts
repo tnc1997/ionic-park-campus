@@ -5,6 +5,7 @@ import {Lecture} from '../../models/lecture';
 import {Module} from '../../models/module';
 import {Time} from '../../models/time';
 import {BuildingProvider, LectureProvider, ModuleProvider} from '../../providers/providers';
+import {Building} from "../../models/building";
 
 @Component({
   selector: 'page-entity-list',
@@ -42,8 +43,16 @@ export class EntityList {
       if (entity != null) {
         switch (this.entity.name) {
          case "Lectures":
-           this.moduleProvider.findByCode(entity.module).then((values) => {
-             this.lectureProvider.createLecture(new Lecture(<Module> values, entity.lecturer, this.buildingProvider.findByCode(entity.building), entity.room, entity.day, new Time(entity.startTime), new Time(entity.finishTime)));
+           let lecture = new Lecture(null, entity.lecturer, null, entity.room, entity.day, new Time(entity.startTime), new Time(entity.finishTime));
+
+           this.moduleProvider.findByCode(entity.module).then((module: Module) => {
+             lecture.module = module;
+
+             return this.buildingProvider.queryBuildings(entity.building);
+           }).then((buildings: Building[]) => {
+             lecture.building = buildings.pop();
+
+             this.lectureProvider.createLecture(lecture);
            });
 
            break;

@@ -31,11 +31,13 @@ export class Setup {
   ];
 
   constructor(public navCtrl: NavController, public menuCtrl: MenuController, public formBuilder: FormBuilder, public buildingProvider: BuildingProvider, public lectureProvider: LectureProvider, public moduleProvider: ModuleProvider, public settingProvider: SettingProvider) {
-    this.menuCtrl.enable(false);
+    menuCtrl.enable(false);
 
-    this.buildings = buildingProvider.findAll();
+    buildingProvider.queryBuildings().then((values) => {
+      this.buildings = <Array<Building>> values;
+    });
 
-    this.moduleProvider.findAll().then((values) => {
+    moduleProvider.findAll().then((values) => {
       this.modules = <Array<Module>> values;
     });
 
@@ -67,10 +69,17 @@ export class Setup {
   }
 
   onCreateLecture() {
-    let lecture = [this.createLecture.value.lecturer, this.buildingProvider.findByCode(this.createLecture.value.building), this.createLecture.value.room, this.createLecture.value.day, new Time(this.createLecture.value.startTime), new Time(this.createLecture.value.finishTime)];
+    let buildingId = this.createLecture.value.building;
+    let lecture = new Lecture(null, this.createLecture.value.lecturer, null, this.createLecture.value.room, this.createLecture.value.day, new Time(this.createLecture.value.startTime), new Time(this.createLecture.value.finishTime));
 
     this.moduleProvider.findByCode(this.createLecture.value.module).then((module: Module) => {
-      this.lectureProvider.createLecture(new Lecture(module, lecture[0], lecture[1], lecture[2], lecture[3], lecture[4], lecture[5]));
+      lecture.module = module;
+
+      return this.buildingProvider.queryBuildings(buildingId);
+    }).then((buildings: Building[]) => {
+      lecture.building = buildings.pop();
+
+      this.lectureProvider.createLecture(lecture);
     });
 
     this.createLecture.reset();
