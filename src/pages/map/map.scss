@@ -4,6 +4,14 @@ page-map {
     margin: 16px;
     width: calc(100% - 16px);
     z-index: 100;
+
+    ion-label {
+      margin: 13px 8px 13px 13px;
+    }
+
+    .select, .select-text {
+      margin-right: 8px;
+    }
   }
 
   #google-map {
