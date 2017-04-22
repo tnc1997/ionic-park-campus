@@ -7,7 +7,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
   <ion-item id="building-select">
     <ion-label>Building</ion-label>
     <ion-select [(ngModel)]="building" (ionChange)="onBuildingChange(building)">
@@ -16,6 +16,6 @@
   </ion-item>
   <br />
   <div id="google-map">
-    <sebm-google-map [latitude] = "lat" [longitude] = "lng" [zoom] = "zoom"></sebm-google-map>
+    <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="true"></sebm-google-map>
   </div>
 </ion-content>

@@ -9,9 +9,16 @@
 
 <ion-content padding>
   <ion-list>
-    <button ion-item *ngFor="let course of courses" (click)="onClickCourse(course)">
-      <h2><strong>{{course.name}}</strong></h2>
-      <div class="item-text-wrap" [innerHtml]="course.synopsis"></div>
-    </button>
+    <ion-item-sliding *ngFor="let course of courses">
+      <button ion-item (click)="onClickCourse(course)">
+        <h2><strong>{{course.name}}</strong></h2>
+        <div class="item-text-wrap" [innerHtml]="course.synopsis"></div>
+      </button>
+      <ion-item-options>
+        <button ion-button color="primary" (click)="onClickLocation(course)">
+          <ion-icon name="map"></ion-icon>Location
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
   </ion-list>
 </ion-content>
