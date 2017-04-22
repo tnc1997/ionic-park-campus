@@ -1,6 +1,7 @@
 import {Component }from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {CourseDetail} from '../course-detail/course-detail';
+import {Map} from '../map/map';
 import {Course} from '../../models/course';
 import {CourseProvider} from '../../providers/providers';
 
@@ -17,9 +18,15 @@ export class CourseList {
     });
   }
 
-  onClickCourse(course) {
+  onClickCourse(course: Course) {
     this.navCtrl.push(CourseDetail, {
       course: course
+    });
+  }
+
+  onClickLocation(course: Course) {
+    this.navCtrl.setRoot(Map, {
+      building: course.building
     });
   }
 }

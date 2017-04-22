@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {NavController, NavParams} from 'ionic-angular';
 import {BuildingProvider} from '../../providers/providers';
 import {Building} from '../../models/building';
 
@@ -14,9 +14,13 @@ export class Map {
 
   buildings: Building[];
 
-  constructor(public navCtrl: NavController, public buildingProvider: BuildingProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public buildingProvider: BuildingProvider) {
     buildingProvider.queryBuildings().then((values) => {
       this.buildings = <Array<Building>> values;
+
+      if (navParams.get("building") != null) {
+        this.onBuildingChange((<Building> navParams.get("building")).id);
+      }
     });
   }
 
