@@ -3,19 +3,21 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="onClickNavigation()">
+        <ion-icon name="navigate"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>Map</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
+  <div #map id="map"></div>
   <ion-item id="building-select">
     <ion-label>Building</ion-label>
     <ion-select [(ngModel)]="building" (ionChange)="onBuildingChange(building)">
       <ion-option *ngFor="let building of buildings" value={{building.id}}>{{building.name}}</ion-option>
     </ion-select>
   </ion-item>
-  <br />
-  <div id="google-map">
-    <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="true"></sebm-google-map>
-  </div>
 </ion-content>
