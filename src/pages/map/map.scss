@@ -14,14 +14,10 @@ page-map {
     }
   }
 
-  #google-map {
+  #map {
     height: 100%;
-    position: fixed;
+    position: fixed !important;
     top: 0;
     width: 100%;
-  }
-
-  .sebm-google-map-container {
-    height: 100%;
   }
 }

@@ -9,9 +9,9 @@ import {EntityCreate} from '../pages/entity-create/entity-create';
 import {EntityList} from '../pages/entity-list/entity-list';
 import {Home} from '../pages/home/home';
 import {Map} from '../pages/map/map';
+import {MapDirections} from '../pages/map-directions/map-directions';
 import {Settings} from '../pages/settings/settings';
 import {Setup} from '../pages/setup/setup';
-import {AgmCoreModule} from 'angular2-google-maps/core';
 import {Api} from '../providers/api';
 import {BuildingProvider} from '../providers/buildings';
 import {CourseProvider} from '../providers/courses';
@@ -27,6 +27,7 @@ let pages = [
   EntityList,
   Home,
   Map,
+  MapDirections,
   Settings,
   Setup
 ];
@@ -59,7 +60,6 @@ export function providers() {
   imports: [
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
-    AgmCoreModule.forRoot({apiKey: 'AIzaSyDFxcmMg3xetqqBKoTUJU7_Zt7TGrHyK4g'}),
     ReactiveFormsModule
   ],
   bootstrap: [
