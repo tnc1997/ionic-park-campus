@@ -30,7 +30,7 @@ export class Map {
     });
   }
 
-  calculateRoute(origin: Building, destination: Building) {
+  calculateRoute(origin: {lat: Number, lng: Number}, destination: {lat: Number, lng: Number}) {
     let request = {
       origin: new google.maps.LatLng(origin.lat, origin.lng),
       destination: new google.maps.LatLng(destination.lat, destination.lng),
@@ -74,19 +74,9 @@ export class Map {
 
   onClickNavigation() {
     let createModal = this.modalCtrl.create(MapDirections);
-    createModal.onDidDismiss((entity) => {
+    createModal.onDidDismiss((entity: {origin: {lat: Number, lng: Number}, destination: {lat: Number, lng: Number}}) => {
       if (entity != null) {
-        let origin: Building, destination: Building;
-
-        this.buildingProvider.queryBuildings(entity.origin).then((buildings: Building[]) => {
-          origin = buildings.pop();
-
-          return this.buildingProvider.queryBuildings(entity.destination);
-        }).then((buildings: Building[]) => {
-          destination = buildings.pop();
-
-          this.calculateRoute(origin, destination);
-        });
+        this.calculateRoute(entity.origin, entity.destination);
       }
     });
     createModal.present();

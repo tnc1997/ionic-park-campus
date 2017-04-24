@@ -14,12 +14,17 @@
 
 <ion-content padding>
   <form [formGroup]="searchDirections">
-    <ion-item>
-      <ion-label>Origin</ion-label>
-      <ion-select formControlName="origin">
-        <ion-option *ngFor="let building of buildings" value={{building.id}}>{{building.name}}</ion-option>
-      </ion-select>
-    </ion-item>
+    <div class="flex flex__container">
+      <ion-item class="flex__item flex__item--maxwidth">
+        <ion-label>Origin</ion-label>
+        <ion-select formControlName="origin">
+          <ion-option *ngFor="let building of buildings" value={{building.id}}>{{building.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <button ion-button icon-only clear margin-left class="flex__item flex__item--minwidth" (click)="onClickCurrentLocation()">
+        <ion-icon name="locate"></ion-icon>
+      </button>
+    </div>
     <br />
     <ion-item>
       <ion-label>Destination</ion-label>
