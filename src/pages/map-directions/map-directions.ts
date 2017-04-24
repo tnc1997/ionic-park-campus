@@ -29,6 +29,40 @@ export class MapDirections {
   }
 
   done() {
-    this.viewCtrl.dismiss(this.searchDirections.value);
+    let origin: {lat: Number, lng: Number}, destination: {lat: Number, lng: Number};
+
+    this.buildingProvider.queryBuildings(this.searchDirections.value.destination).then((buildings: Building[]) => {
+      destination = {lat: buildings[0].lat, lng: buildings[0].lng};
+
+      if (this.searchDirections.get('origin').enabled) {
+        this.buildingProvider.queryBuildings(this.searchDirections.value.origin).then((buildings: Building[]) => {
+          origin = {lat: buildings[0].lat, lng: buildings[0].lng};
+
+          this.viewCtrl.dismiss({
+            origin: origin,
+            destination: destination
+          });
+        });
+      } else {
+        navigator.geolocation.getCurrentPosition((position) => {
+          origin = {lat: position.coords.latitude, lng: position.coords.longitude};
+
+          this.viewCtrl.dismiss({
+            origin: origin,
+            destination: destination
+          });
+        }, null, {maximumAge: 5000, timeout: 5000, enableHighAccuracy: true});
+      }
+    });
+  }
+
+  onClickCurrentLocation() {
+    if (this.searchDirections.get('origin').enabled) {
+      this.searchDirections.get('origin').setValue("My Location");
+      this.searchDirections.get('origin').disable();
+    } else {
+      this.searchDirections.get('origin').setValue(null);
+      this.searchDirections.get('origin').enable();
+    }
   }
 }

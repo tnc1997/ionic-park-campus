@@ -19,9 +19,25 @@ a {
   text-decoration: none;
 }
 
+.button[icon-only] {
+  min-width: 35px;
+}
+
 .card {
   margin: 0 0 16px 0;
   width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex__item--maxwidth {
+  flex: 1;
+}
+
+.flex__item--minwidth {
+  flex: 0;
 }
 
 .item {
