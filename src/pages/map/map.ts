@@ -58,6 +58,10 @@ export class Map {
       center: new google.maps.LatLng(51.88694, -2.08864),
       zoom: 16
     });
+
+    if (this.navParams.get("origin") != null && this.navParams.get("destination") != null) {
+      this.calculateRoute(this.navParams.get("origin"), this.navParams.get("destination"));
+    }
   }
 
   onBuildingChange(buildingId: Number) {
