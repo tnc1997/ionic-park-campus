@@ -1,8 +1,9 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
-import {ModalController, NavController, NavParams} from 'ionic-angular';
+import {ModalController, NavController, NavParams, PopoverController} from 'ionic-angular';
 import {BuildingProvider} from '../../providers/providers';
 import {Building} from '../../models/building';
 import {MapDirections} from '../map-directions/map-directions';
+import {MapPopover} from '../map-popover/map-popover';
 
 declare let google;
 
@@ -20,7 +21,7 @@ export class Map {
 
   buildings: Building[];
 
-  constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, public buildingProvider: BuildingProvider) {
+  constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, public popoverCtrl: PopoverController, public buildingProvider: BuildingProvider) {
     buildingProvider.queryBuildings().then((values) => {
       this.buildings = <Array<Building>> values;
 
@@ -37,11 +38,12 @@ export class Map {
       travelMode: google.maps.TravelMode['WALKING']
     };
 
-    let directionsRenderer = this.directionsRenderer;
+    let directionsRenderer = this.directionsRenderer, map = this.map;
 
     this.directionsService.route(request, function (result, status) {
       if (status == "OK") {
         directionsRenderer.setDirections(result);
+        directionsRenderer.setMap(map);
       } else {
         console.log(status);
       }
@@ -56,8 +58,6 @@ export class Map {
       center: new google.maps.LatLng(51.88694, -2.08864),
       zoom: 16
     });
-
-    this.directionsRenderer.setMap(this.map);
   }
 
   onBuildingChange(buildingId: Number) {
@@ -80,6 +80,13 @@ export class Map {
       }
     });
     createModal.present();
+  }
+
+  presentPopover() {
+    let popover = this.popoverCtrl.create(MapPopover, {
+      directionsRenderer: this.directionsRenderer
+    });
+    popover.present();
   }
 
   updateMapCentre(lat: Number, lng: Number, zoom: Number) {
