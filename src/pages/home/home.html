@@ -17,8 +17,14 @@
       <ion-list>
         <h2><ion-icon name="calendar" margin-right></ion-icon>{{days[nextLecture.day]}}</h2>
         <h2><ion-icon name="clock" margin-right></ion-icon>{{nextLecture.startTime._time}} - {{nextLecture.finishTime._time}}</h2>
+        <h2><ion-icon name="map" margin-right></ion-icon>{{nextLecture.building._name}}</h2>
       </ion-list>
     </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <button ion-button clear (click)="onClickDirections(nextLecture)">Directions</button>
+      </ion-col>
+    </ion-row>
   </ion-card>
   <h1 text-center>Other Lectures</h1>
   <ion-card *ngFor="let lecture of lectures">
@@ -29,7 +35,13 @@
       <ion-list>
         <h2><ion-icon name="calendar" margin-right></ion-icon>{{days[lecture.day]}}</h2>
         <h2><ion-icon name="clock" margin-right></ion-icon>{{lecture.startTime._time}} - {{lecture.finishTime._time}}</h2>
+        <h2><ion-icon name="map" margin-right></ion-icon>{{lecture.building._name}}</h2>
       </ion-list>
     </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <button ion-button clear (click)="onClickDirections(lecture)">Directions</button>
+      </ion-col>
+    </ion-row>
   </ion-card>
 </ion-content>

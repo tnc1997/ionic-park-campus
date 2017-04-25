@@ -1,8 +1,9 @@
 import {Component }from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {Lecture} from '../../models/lecture';
+import {Time} from '../../models/time';
 import {LectureProvider} from '../../providers/providers';
-import {Time} from "../../models/time";
+import {Map} from '../map/map';
 
 @Component({
   selector: 'page-home',
@@ -45,5 +46,16 @@ export class Home {
     result.setDate(date.getDate() + (7 + dayOfWeek.valueOf() - date.getDay()) % 7);
 
     return result;
+  }
+
+  onClickDirections(lecture: Lecture) {
+    navigator.geolocation.getCurrentPosition((position) => {
+      let building = JSON.parse(JSON.stringify(lecture.building));
+
+      this.navCtrl.setRoot(Map, {
+        origin: {lat: position.coords.latitude, lng: position.coords.longitude},
+        destination: {lat: building._lat, lng: building._lng}
+      });
+    });
   }
 }
