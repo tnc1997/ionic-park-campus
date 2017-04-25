@@ -10,6 +10,7 @@ import {EntityList} from '../pages/entity-list/entity-list';
 import {Home} from '../pages/home/home';
 import {Map} from '../pages/map/map';
 import {MapDirections} from '../pages/map-directions/map-directions';
+import {MapPopover} from '../pages/map-popover/map-popover';
 import {Settings} from '../pages/settings/settings';
 import {Setup} from '../pages/setup/setup';
 import {Api} from '../providers/api';
@@ -28,6 +29,7 @@ let pages = [
   Home,
   Map,
   MapDirections,
+  MapPopover,
   Settings,
   Setup
 ];
