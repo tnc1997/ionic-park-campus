@@ -30,7 +30,7 @@ export class Home {
         lectureDate.setMinutes(startTime.minutes);
         lectureDate.setSeconds(0);
 
-        if (currentDuration == null || currentDuration > (lectureDate.getTime() - currentDate.getTime())) {
+        if (currentDuration == null || (currentDuration > (lectureDate.getTime() - currentDate.getTime()) && (lectureDate.getTime() - currentDate.getTime()) > 0)) {
           this.nextLectures = [this.lectures[i]];
 
           currentDuration = lectureDate.getTime() - currentDate.getTime();
