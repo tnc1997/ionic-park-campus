@@ -71,6 +71,12 @@ export class Map {
       });
 
       polygon.setMap(this.map);
+      polygon.addListener("click", (event) => {
+        let infoWindow = new google.maps.InfoWindow;
+        infoWindow.setContent(this.buildings[Number(buildingPolygons[i].building) - 1].name);
+        infoWindow.setPosition(event.latLng);
+        infoWindow.open(this.map);
+      });
     }
 
     if (this.navParams.get("origin") != null && this.navParams.get("destination") != null) {
