@@ -18,6 +18,7 @@ import {BuildingProvider} from '../providers/buildings';
 import {CourseProvider} from '../providers/courses';
 import {LectureProvider} from '../providers/lectures';
 import {ModuleProvider} from '../providers/modules';
+import {PolygonProvider} from '../providers/polygons';
 import {SettingProvider} from '../providers/settings';
 
 let pages = [
@@ -49,6 +50,7 @@ export function providers() {
     CourseProvider,
     LectureProvider,
     ModuleProvider,
+    PolygonProvider,
     SettingProvider,
 
     {provide: ErrorHandler, useClass: IonicErrorHandler}
