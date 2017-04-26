@@ -1,6 +1,6 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
 import {ModalController, NavController, NavParams, PopoverController} from 'ionic-angular';
-import {BuildingProvider} from '../../providers/providers';
+import {BuildingProvider, PolygonProvider} from '../../providers/providers';
 import {Building} from '../../models/building';
 import {MapDirections} from '../map-directions/map-directions';
 import {MapPopover} from '../map-popover/map-popover';
@@ -21,7 +21,7 @@ export class Map {
 
   buildings: Building[];
 
-  constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, public popoverCtrl: PopoverController, public buildingProvider: BuildingProvider) {
+  constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, public popoverCtrl: PopoverController, public buildingProvider: BuildingProvider, public polygonProvider: PolygonProvider) {
     buildingProvider.queryBuildings().then((values) => {
       this.buildings = <Array<Building>> values;
 
@@ -58,6 +58,20 @@ export class Map {
       center: new google.maps.LatLng(51.88694, -2.08864),
       zoom: 16
     });
+
+    let buildingPolygons = this.polygonProvider.buildingPolygons;
+
+    for (let i = 0; i < buildingPolygons.length; i++) {
+      let polygon = new google.maps.Polygon({
+        paths: buildingPolygons[i].coordinates,
+        strokeColor: buildingPolygons[i].color,
+        strokeOpacity: 0.25,
+        fillColor: buildingPolygons[i].color,
+        fillOpacity: 0.50
+      });
+
+      polygon.setMap(this.map);
+    }
 
     if (this.navParams.get("origin") != null && this.navParams.get("destination") != null) {
       this.calculateRoute(this.navParams.get("origin"), this.navParams.get("destination"));
