@@ -15,6 +15,7 @@ export class Map {
   @ViewChild('map') mapElement: ElementRef;
 
   map: any;
+  mapPolygons: any[];
 
   directionsRenderer: any;
   directionsService: any;
@@ -59,25 +60,7 @@ export class Map {
       zoom: 16
     });
 
-    let buildingPolygons = this.polygonProvider.buildingPolygons;
-
-    for (let i = 0; i < buildingPolygons.length; i++) {
-      let polygon = new google.maps.Polygon({
-        paths: buildingPolygons[i].coordinates,
-        strokeColor: buildingPolygons[i].color,
-        strokeOpacity: 0.25,
-        fillColor: buildingPolygons[i].color,
-        fillOpacity: 0.50
-      });
-
-      polygon.setMap(this.map);
-      polygon.addListener("click", (event) => {
-        let infoWindow = new google.maps.InfoWindow;
-        infoWindow.setContent(this.buildings[Number(buildingPolygons[i].building) - 1].name);
-        infoWindow.setPosition(event.latLng);
-        infoWindow.open(this.map);
-      });
-    }
+    this.showPolygons();
 
     if (this.navParams.get("origin") != null && this.navParams.get("destination") != null) {
       this.calculateRoute(this.navParams.get("origin"), this.navParams.get("destination"));
@@ -108,9 +91,37 @@ export class Map {
 
   presentPopover() {
     let popover = this.popoverCtrl.create(MapPopover, {
-      directionsRenderer: this.directionsRenderer
+      directionsRenderer: this.directionsRenderer,
+      map: this.map,
+      mapPolygons: this.mapPolygons
     });
     popover.present();
+  }
+
+  showPolygons() {
+    this.mapPolygons = [];
+
+    let buildingPolygons = this.polygonProvider.buildingPolygons;
+
+    for (let i = 0; i < buildingPolygons.length; i++) {
+      let polygon = new google.maps.Polygon({
+        paths: buildingPolygons[i].coordinates,
+        strokeColor: buildingPolygons[i].color,
+        strokeOpacity: 0.25,
+        fillColor: buildingPolygons[i].color,
+        fillOpacity: 0.50
+      });
+
+      polygon.setMap(this.map);
+      polygon.addListener("click", (event) => {
+        let infoWindow = new google.maps.InfoWindow;
+        infoWindow.setContent(this.buildings[Number(buildingPolygons[i].building) - 1].name);
+        infoWindow.setPosition(event.latLng);
+        infoWindow.open(this.map);
+      });
+
+      this.mapPolygons.push(polygon);
+    }
   }
 
   updateMapCentre(lat: Number, lng: Number, zoom: Number) {

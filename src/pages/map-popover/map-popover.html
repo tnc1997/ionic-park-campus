@@ -1,1 +1,7 @@
-<button ion-item detail-none padding-left (click)="clearDirections()">Clear Directions</button>
+<ion-list no-lines no-margin>
+  <button ion-item detail-none padding-left (click)="clearDirections()">Clear Directions</button>
+  <ion-item padding-left>
+    <ion-label>Building Overlay</ion-label>
+    <ion-toggle [(ngModel)]="displayOverlay" (ionChange)="onOverlayToggleChange()"></ion-toggle>
+  </ion-item>
+</ion-list>
