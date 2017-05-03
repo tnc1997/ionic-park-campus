@@ -28,9 +28,15 @@ export class MapPopover {
 
   onOverlayToggleChange() {
     if (this.toggleInitialized && this.displayOverlay) {
-      this.mapPolygons.forEach((polygon) => polygon.setMap(this.map));
+      this.mapPolygons.forEach((polygon) => {
+        if (polygon.type == "building" || (polygon.type == "room" && polygon.floor == 0)) {
+          polygon.setMap(this.map);
+        }
+      });
     } else if (this.toggleInitialized) {
-      this.mapPolygons.forEach((polygon) => polygon.setMap(null));
+      this.mapPolygons.forEach((polygon) => {
+        polygon.setMap(null);
+      });
     }
   }
 }

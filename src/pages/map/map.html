@@ -23,82 +23,9 @@
       <ion-option *ngFor="let building of buildings" value={{building.id}}>{{building.name}}</ion-option>
     </ion-select>
   </ion-item>
-  <!--<div id="google-map">
-    <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
-      <sebm-map-polygon *ngIf = "floor === 'GROUND'" [paths] = "poly001" fillColor = "#FFF8EB" fillOpacity = "1" strokeColor = "#B8ACA2" [strokeWeight] = "1" [zIndex] = "98" [clickable] = "true" (polyClick) = "onRoomClick(1)"></sebm-map-polygon>
-      <sebm-map-polygon *ngIf = "floor === 'GROUND'" [paths] = "poly002" fillColor = "#FFF8EB" fillOpacity = "1" strokeColor = "#B8ACA2" [strokeWeight] = "1" [zIndex] = "97" [clickable] = "true" (polyClick) = "onRoomClick(2)"></sebm-map-polygon>
-      <sebm-map-polygon *ngIf = "floor === 'GROUND'" [paths] = "poly003" fillColor = "#FFF8EB" fillOpacity = "1" strokeColor = "#B8ACA2" [strokeWeight] = "1" [zIndex] = "96" [clickable] = "true" (polyClick) = "onRoomClick(3)"></sebm-map-polygon>
-      <sebm-map-polygon *ngIf = "floor === 'GROUND'" [paths] = "poly004" fillColor = "#FFF8EB" fillOpacity = "1" strokeColor = "#B8ACA2" [strokeWeight] = "1" [zIndex] = "95" [clickable] = "true" (polyClick) = "onRoomClick(4)"></sebm-map-polygon>
-      <sebm-map-polygon *ngIf = "floor === 'GROUND'" [paths] = "poly005" fillColor = "#FFF8EB" fillOpacity = "1" strokeColor = "#B8ACA2" [strokeWeight] = "1" [zIndex] = "94" [clickable] = "true" (polyClick) = "onRoomClick(5)"></sebm-map-polygon>
-      <sebm-map-polygon *ngIf = "floor === 'GROUND'" [paths] = "poly006" fillColor = "#FFF8EB" fillOpacity = "1" strokeColor = "#B8ACA2" [strokeWeight] = "1" [zIndex] = "93" [clickable] = "true" (polyClick) = "onRoomClick(6)"></sebm-map-polygon>
-      <sebm-map-polygon *ngIf = "floor === 'GROUND'" [paths] = "poly011" fillColor = "#EEE5F8" fillOpacity = "1" strokeColor = "#D4C1EB" [strokeWeight] = "1" [zIndex] = "92" [clickable] = "true" (polyClick) = "onRoomClick(11)"></sebm-map-polygon>
-      <sebm-map-polygon *ngIf = "floor === 'FIRST'" [paths] = "poly101" fillColor = "#FFF8EB" fillOpacity = "1" strokeColor = "#B8ACA2" [strokeWeight] = "1" [zIndex] = "98" [clickable] = "true" (polyClick) = "onRoomClick(101)"></sebm-map-polygon>
-      <sebm-map-polygon *ngIf = "floor === 'FIRST'" [paths] = "poly103" fillColor = "#FFF8EB" fillOpacity = "1" strokeColor = "#B8ACA2" [strokeWeight] = "1" [zIndex] = "97" [clickable] = "true" (polyClick) = "onRoomClick(103)"></sebm-map-polygon>
-      <sebm-map-polygon *ngIf = "floor === 'FIRST'" [paths] = "poly104" fillColor = "#FFF8EB" fillOpacity = "1" strokeColor = "#B8ACA2" [strokeWeight] = "1" [zIndex] = "96" [clickable] = "true" (polyClick) = "onRoomClick(104)"></sebm-map-polygon>
-      <sebm-map-polygon *ngIf = "floor === 'FIRST'" [paths] = "poly113" fillColor = "#EEE5F8" fillOpacity = "1" strokeColor = "#D4C1EB" [strokeWeight] = "1" [zIndex] = "94" [clickable] = "true" (polyClick) = "onRoomClick(113)"></sebm-map-polygon>
-      <sebm-map-polygon *ngIf = "floor === 'FIRST'" [paths] = "poly114" fillColor = "#FFF8EB" fillOpacity = "1" strokeColor = "#B8ACA2" [strokeWeight] = "1" [zIndex] = "93" [clickable] = "true" (polyClick) = "onRoomClick(114)"></sebm-map-polygon>
-    </sebm-google-map>
-  </div>
-  <div id="buttons">
-    <button ion-button outline id = "btnFirst" color = "light" (click)="floor = 'FIRST'">1</button>
-    <button ion-button outline id = "btnGround" color = "light" (click)="floor = 'GROUND'">0</button>
-  </div>
-  <div id="popup" *ngIf = "popup !== 0">
-    <div id="popup-001" *ngIf = "popup === 1">
-      <ion-label id="popup-title">The Zone</ion-label>
-      <img src="../../assets/map/zone.JPG" alt="zone" id="popup-picture">
-      <div id="popup-content">The Zone features comfortable seating including booths with provided charging points for a pleasant, relaxed, and constructive working environment.</div>
-    </div>
-    <div id="popup-002" *ngIf = "popup === 2">
-      <ion-label id="popup-title">WW002</ion-label>
-      <div id="popup-content">This room hosts computing lectures and laboratory sessions. Specialist game development lectures are also primarily held here.</div>
-    </div>
-    <div id="popup-003" *ngIf = "popup === 3">
-      <ion-label id="popup-title">WW003</ion-label>
-      <div id="popup-content">This room hosts computing lectures and laboratory sessions. It also acts as the secondary room for game development sessions.</div>
-    </div>
-    <div id="popup-004" *ngIf = "popup === 4">
-      <ion-label id="popup-title">WW004</ion-label>
-      <div id="popup-content">This room is the smaller recording studio on the ground floor of the Waterworth building.</div>
-    </div>
-    <div id="popup-005" *ngIf = "popup === 5">
-      <ion-label id="popup-title">Storage</ion-label>
-      <div id="popup-content">This room acts as storage for the Waterworth building.</div>
-    </div>
-    <div id="popup-006" *ngIf = "popup === 6">
-      <ion-label id="popup-title">WW006</ion-label>
-      <div id="popup-content">This room is the larger recording studio on the ground floor of the Waterworth building.</div>
-    </div>
-    <div id="popup-011" *ngIf = "popup === 11">
-      <ion-label id="popup-title">Bathroom</ion-label>
-      <img src="../../assets/map/toilet.JPG" alt="toilet" id="popup-picture">
-      <div id="popup-content">The unisex bathrooms in the Waterworth building are spacious and contain all the necessary amenities. This ground floor bathroom has a single toilet.</div>
-    </div>
-    <div id="popup-101" *ngIf = "popup === 101">
-      <ion-label id="popup-title">WW101</ion-label>
-      <div id="popup-content">This room hosts computing lectures and laboratory sessions. Due to the sheer size of this room, a folding divider has been installed which can be pulled out to separate the room into two. This allows for two lectures to be run here simultaneously without complication.</div>
-    </div>
-    <div id="popup-103" *ngIf = "popup === 103">
-      <ion-label id="popup-title">Staff Office</ion-label>
-      <img src="../../assets/map/office.JPG" alt="office" id="popup-picture">
-      <div id="popup-content">This room acts as a large office for members of staff to work when they are not conducting a lecture. It also features some recreational facilities, such as a kitchenette, for employees to use when needed.</div>
-    </div>
-    <div id="popup-104" *ngIf = "popup === 104">
-      <ion-label id="popup-title">Second Office</ion-label>
-      <div id="popup-content">This room acts as a smaller office to be used by a couple of members of staff at one time.</div>
-    </div>
-    <div id="popup-113" *ngIf = "popup === 113">
-      <ion-label id="popup-title">Bathroom</ion-label>
-      <img src="../../assets/map/toilet.JPG" alt="toilet" id="popup-picture">
-      <div id="popup-content">The unisex bathrooms in the Waterworth building are spacious and contain all the necessary amenities. This first floor bathroom has two toilets.</div>
-    </div>
-    <div id="popup-114" *ngIf = "popup === 114">
-      <ion-label id="popup-title">WW114</ion-label>
-      <img src="../../assets/map/forensics.JPG" alt="forensics" id="popup-picture">
-      <div id="popup-content">This room hosts computing lectures and laboratory sessions. Specialist forensic computing lectures are also primarily held here.</div>
-    </div>
+  <div id="button-floors">
+    <button ion-button id="button-floor-1" color="light" (click)="onClickFloor(1)">1</button>
     <br>
-    <button ion-button color = "light" id = "popup-button" (click)="popup = 0">Close</button>
-    <br>
-  </div>-->
+    <button ion-button id="button-floor-0" color="light" (click)="onClickFloor(0)">0</button>
+  </div>
 </ion-content>
