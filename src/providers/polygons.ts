@@ -4,13 +4,13 @@ declare let google;
 
 @Injectable()
 export class PolygonProvider {
-  private _buildingPolygons: {building: Number, color: String, coordinates: {}[]}[];
+  private _buildingPolygons: {building: Number, coordinates: {}[], fillColor: String, strokeColor: String}[];
+  private _roomPolygons: {room: String, coordinates: {}[], description: String, fillColor: String, strokeColor: String}[];
 
   constructor() {
     this._buildingPolygons = [
       {
         building: 1,
-        color: "",
         coordinates: [
           new google.maps.LatLng(51.887987, -2.087384),
           new google.maps.LatLng(51.887938, -2.087888),
@@ -28,21 +28,23 @@ export class PolygonProvider {
           new google.maps.LatLng(51.887774, -2.087724),
           new google.maps.LatLng(51.887791, -2.087729),
           new google.maps.LatLng(51.887831, -2.087342)
-        ]
+        ],
+        fillColor: "#fff",
+        strokeColor: "#ccc"
       },
       {
         building: 2,
-        color: "",
         coordinates: [
           new google.maps.LatLng(51.885804, -2.090255),
           new google.maps.LatLng(51.885754, -2.090370),
           new google.maps.LatLng(51.885695, -2.090302),
           new google.maps.LatLng(51.885744, -2.090187)
-        ]
+        ],
+        fillColor: "#fff",
+        strokeColor: "#ccc"
       },
       {
         building: 3,
-        color: "",
         coordinates: [
           new google.maps.LatLng(51.886674, -2.087231),
           new google.maps.LatLng(51.886622, -2.087344),
@@ -50,11 +52,12 @@ export class PolygonProvider {
           new google.maps.LatLng(51.886585, -2.087444),
           new google.maps.LatLng(51.886462, -2.087291),
           new google.maps.LatLng(51.886559, -2.087086)
-        ]
+        ],
+        fillColor: "#fff",
+        strokeColor: "#ccc"
       },
       {
         building: 4,
-        color: "",
         coordinates: [
           new google.maps.LatLng(51.888774, -2.086056),
           new google.maps.LatLng(51.888746, -2.086011),
@@ -72,11 +75,12 @@ export class PolygonProvider {
           new google.maps.LatLng(51.888795, -2.085859),
           new google.maps.LatLng(51.888770, -2.085900),
           new google.maps.LatLng(51.888793, -2.085937)
-        ]
+        ],
+        fillColor: "#fff",
+        strokeColor: "#ccc"
       },
       {
         building: 5,
-        color: "",
         coordinates: [
           new google.maps.LatLng(51.887396, -2.086737),
           new google.maps.LatLng(51.887361, -2.086513),
@@ -84,11 +88,12 @@ export class PolygonProvider {
           new google.maps.LatLng(51.887544, -2.086629),
           new google.maps.LatLng(51.887488, -2.086653),
           new google.maps.LatLng(51.887494, -2.086696)
-        ]
+        ],
+        fillColor: "#fff",
+        strokeColor: "#ccc"
       },
       {
         building: 6,
-        color: "",
         coordinates: [
           new google.maps.LatLng(51.886332, -2.090723),
           new google.maps.LatLng(51.886266, -2.090865),
@@ -100,11 +105,12 @@ export class PolygonProvider {
           new google.maps.LatLng(51.886253, -2.090458),
           new google.maps.LatLng(51.886300, -2.090518),
           new google.maps.LatLng(51.886252, -2.090621)
-        ]
+        ],
+        fillColor: "#fff",
+        strokeColor: "#ccc"
       },
       {
         building: 7,
-        color: "",
         coordinates: [
           new google.maps.LatLng(51.887568, -2.088938),
           new google.maps.LatLng(51.887444, -2.088822),
@@ -122,11 +128,12 @@ export class PolygonProvider {
           new google.maps.LatLng(51.887628, -2.088808),
           new google.maps.LatLng(51.887594, -2.088897),
           new google.maps.LatLng(51.887587, -2.088889)
-        ]
+        ],
+        fillColor: "#fff",
+        strokeColor: "#ccc"
       },
       {
         building: 8,
-        color: "",
         coordinates: [
           new google.maps.LatLng(51.888338, -2.089143),
           new google.maps.LatLng(51.888309, -2.089245),
@@ -136,11 +143,12 @@ export class PolygonProvider {
           new google.maps.LatLng(51.888239, -2.089077),
           new google.maps.LatLng(51.888296, -2.089119),
           new google.maps.LatLng(51.888299, -2.089112)
-        ]
+        ],
+        fillColor: "#fff",
+        strokeColor: "#ccc"
       },
       {
         building: 9,
-        color: "",
         coordinates: [
           new google.maps.LatLng(51.887961, -2.087301),
           new google.maps.LatLng(51.887977, -2.087138),
@@ -152,21 +160,23 @@ export class PolygonProvider {
           new google.maps.LatLng(51.887864, -2.087349),
           new google.maps.LatLng(51.887947, -2.087372),
           new google.maps.LatLng(51.887955, -2.087299)
-        ]
+        ],
+        fillColor: "#fff",
+        strokeColor: "#ccc"
       },
       {
         building: 10,
-        color: "",
         coordinates: [
           new google.maps.LatLng(51.888191, -2.088077),
           new google.maps.LatLng(51.888088, -2.088052),
           new google.maps.LatLng(51.888105, -2.087888),
           new google.maps.LatLng(51.888206, -2.087912)
-        ]
+        ],
+        fillColor: "#fff",
+        strokeColor: "#ccc"
       },
       {
         building: 11,
-        color: "",
         coordinates: [
           new google.maps.LatLng(51.887681, -2.087453),
           new google.maps.LatLng(51.887679, -2.087481),
@@ -184,11 +194,12 @@ export class PolygonProvider {
           new google.maps.LatLng(51.887458, -2.087365),
           new google.maps.LatLng(51.887485, -2.087390),
           new google.maps.LatLng(51.887536, -2.087418)
-        ]
+        ],
+        fillColor: "#fff",
+        strokeColor: "#ccc"
       },
       {
         building: 12,
-        color: "",
         coordinates: [
           new google.maps.LatLng(51.887921, -2.088031),
           new google.maps.LatLng(51.887853, -2.088209),
@@ -213,11 +224,12 @@ export class PolygonProvider {
           new google.maps.LatLng(51.887840, -2.087913),
           new google.maps.LatLng(51.887900, -2.087973),
           new google.maps.LatLng(51.887891, -2.088000)
-        ]
+        ],
+        fillColor: "#fff",
+        strokeColor: "#ccc"
       },
       {
         building: 13,
-        color: "",
         coordinates: [
           new google.maps.LatLng(51.887964, -2.087615),
           new google.maps.LatLng(51.888012, -2.087627),
@@ -247,11 +259,12 @@ export class PolygonProvider {
           new google.maps.LatLng(51.887995, -2.087803),
           new google.maps.LatLng(51.888004, -2.087716),
           new google.maps.LatLng(51.887957, -2.087704)
-        ]
+        ],
+        fillColor: "#fff",
+        strokeColor: "#ccc"
       },
       {
         building: 14,
-        color: "",
         coordinates: [
           new google.maps.LatLng(51.888472, -2.087345),
           new google.maps.LatLng(51.888334, -2.087308),
@@ -261,11 +274,12 @@ export class PolygonProvider {
           new google.maps.LatLng(51.888366, -2.087109),
           new google.maps.LatLng(51.888369, -2.087093),
           new google.maps.LatLng(51.888494, -2.087125)
-        ]
+        ],
+        fillColor: "#fff",
+        strokeColor: "#ccc"
       },
       {
         building: 15,
-        color: "",
         coordinates: [
           new google.maps.LatLng(51.888495, -2.087516),
           new google.maps.LatLng(51.888457, -2.087921),
@@ -289,11 +303,12 @@ export class PolygonProvider {
           new google.maps.LatLng(51.888264, -2.088093),
           new google.maps.LatLng(51.888299, -2.088101),
           new google.maps.LatLng(51.888357, -2.087481)
-        ]
+        ],
+        fillColor: "#fff",
+        strokeColor: "#ccc"
       },
       {
         building: 16,
-        color: "",
         coordinates: [
           new google.maps.LatLng(51.887174, -2.087387),
           new google.maps.LatLng(51.887095, -2.087455),
@@ -328,11 +343,12 @@ export class PolygonProvider {
           new google.maps.LatLng(51.887238, -2.087541),
           new google.maps.LatLng(51.887239, -2.087533),
           new google.maps.LatLng(51.887211, -2.087476)
-        ]
+        ],
+        fillColor: "#fff",
+        strokeColor: "#ccc"
       },
       {
         building: 17,
-        color: "",
         coordinates: [
           new google.maps.LatLng(51.888318, -2.088783),
           new google.maps.LatLng(51.888329, -2.088677),
@@ -346,12 +362,174 @@ export class PolygonProvider {
           new google.maps.LatLng(51.888140, -2.088606),
           new google.maps.LatLng(51.888159, -2.088611),
           new google.maps.LatLng(51.888147, -2.088740)
-        ]
+        ],
+        fillColor: "#fff",
+        strokeColor: "#ccc"
+      }
+    ];
+
+    this._roomPolygons = [
+      {
+        room: "WW001",
+        coordinates: [
+          new google.maps.LatLng(51.888347, -2.088475),
+          new google.maps.LatLng(51.888357, -2.088373),
+          new google.maps.LatLng(51.888186, -2.088330),
+          new google.maps.LatLng(51.888176, -2.088432)
+        ],
+        description: "<img src='assets/images/rooms/ww001.jpg' alt='WW001' class='description-image'><p class='description-text'>The Zone features comfortable seating including booths with provided charging points for a pleasant, relaxed, and constructive working environment.</p>",
+        fillColor: "#fff8eb",
+        strokeColor: "#b8aca2"
+      },
+      {
+        room: "WW002",
+        coordinates: [
+          new google.maps.LatLng(51.888201, -2.088754),
+          new google.maps.LatLng(51.888227, -2.088469),
+          new google.maps.LatLng(51.888154, -2.088452),
+          new google.maps.LatLng(51.888140, -2.088606),
+          new google.maps.LatLng(51.888159, -2.088611),
+          new google.maps.LatLng(51.888147, -2.088740)
+        ],
+        description: "<p class='description-text'>This room hosts computing lectures and laboratory sessions. Specialist game development lectures are also primarily held here.</p>",
+        fillColor: "#fff8eb",
+        strokeColor: "#b8aca2"
+      },
+      {
+        room: "WW003",
+        coordinates: [
+          new google.maps.LatLng(51.888319, -2.088783),
+          new google.maps.LatLng(51.888329, -2.088677),
+          new google.maps.LatLng(51.888256, -2.088659),
+          new google.maps.LatLng(51.888253, -2.088690),
+          new google.maps.LatLng(51.888208, -2.088678),
+          new google.maps.LatLng(51.888201, -2.088754)
+        ],
+        description: "<p class='description-text'>This room hosts computing lectures and laboratory sessions. It also acts as the secondary room for game development sessions.</p>",
+        fillColor: "#fff8eb",
+        strokeColor: "#b8aca2"
+      },
+      {
+        room: "WW004",
+        coordinates: [
+          new google.maps.LatLng(51.888275, -2.088663),
+          new google.maps.LatLng(51.888279, -2.088623),
+          new google.maps.LatLng(51.888250, -2.088615),
+          new google.maps.LatLng(51.888246, -2.088656)
+        ],
+        description: "<p class='description-text'>This room is the smaller recording studio on the ground floor of the Waterworth Building.</p>",
+        fillColor: "#fff8eb",
+        strokeColor: "#b8aca2"
+      },
+      {
+        room: "WW005",
+        coordinates: [
+          new google.maps.LatLng(51.888235, -2.088653),
+          new google.maps.LatLng(51.888239, -2.088613),
+          new google.maps.LatLng(51.888250, -2.088615),
+          new google.maps.LatLng(51.888246, -2.088656)
+        ],
+        description: "<p class='description-text'>This room acts as a storage room for the Waterworth Building.</p>",
+        fillColor: "#fff8eb",
+        strokeColor: "#b8aca2"
+      },
+      {
+        room: "WW006",
+        coordinates: [
+          new google.maps.LatLng(51.888279, -2.088623),
+          new google.maps.LatLng(51.888284, -2.088570),
+          new google.maps.LatLng(51.888244, -2.088560),
+          new google.maps.LatLng(51.888239, -2.088613)
+        ],
+        description: "<p class='description-text'>This room is the larger recording studio on the ground floor of the Waterworth Building.</p>",
+        fillColor: "#fff8eb",
+        strokeColor: "#b8aca2"
+      },
+      {
+        room: "WW011",
+        coordinates: [
+          new google.maps.LatLng(51.888291, -2.088507),
+          new google.maps.LatLng(51.888296, -2.088462),
+          new google.maps.LatLng(51.888254, -2.088452),
+          new google.maps.LatLng(51.888250, -2.088497)
+        ],
+        description: "<p class='description-text'>The unisex bathrooms in the Waterworth Building are spacious and contain all the necessary amenities.</p>",
+        fillColor: "#eee5f8",
+        strokeColor: "#d4c1eb"
+      },
+      {
+        room: "WW101",
+        coordinates: [
+          new google.maps.LatLng(51.888213, -2.088622),
+          new google.maps.LatLng(51.888240, -2.088344),
+          new google.maps.LatLng(51.888186, -2.088330),
+          new google.maps.LatLng(51.888174, -2.088456),
+          new google.maps.LatLng(51.888154, -2.088452),
+          new google.maps.LatLng(51.888140, -2.088606),
+          new google.maps.LatLng(51.888160, -2.088611)
+        ],
+        description: "<p class='description-text'>This room hosts computing lectures and laboratory sessions. Due to the size of the room, a folding divider has been installed which can be used to separate the room into two.</p>",
+        fillColor: "#fff8eb",
+        strokeColor: "#b8aca2"
+      },
+      {
+        room: "WW103",
+        coordinates: [
+          new google.maps.LatLng(51.888319, -2.088783),
+          new google.maps.LatLng(51.888329, -2.088677),
+          new google.maps.LatLng(51.888211, -2.088647),
+          new google.maps.LatLng(51.888213, -2.088622),
+          new google.maps.LatLng(51.888159, -2.088611),
+          new google.maps.LatLng(51.888147, -2.088740)
+        ],
+        description: "<img src='assets/images/rooms/ww103.jpg' alt='WW103' class='description-image'><p class='description-text'>This room is an office for members of staff. It features some recreational facilities, such as a kitchenette.</p>",
+        fillColor: "#fff8eb",
+        strokeColor: "#b8aca2"
+      },
+      {
+        room: "WW104",
+        coordinates: [
+          new google.maps.LatLng(51.888275, -2.088663),
+          new google.maps.LatLng(51.888235, -2.088653),
+          new google.maps.LatLng(51.888244, -2.088560),
+          new google.maps.LatLng(51.888284, -2.088570)
+        ],
+        description: "<p class='description-text'>This room is a smaller office to be used by a couple of members of staff at any one time.</p>",
+        fillColor: "#fff8eb",
+        strokeColor: "#b8aca2"
+      },
+      {
+        room: "WW113",
+        coordinates: [
+          new google.maps.LatLng(51.888291, -2.088507),
+          new google.maps.LatLng(51.888296, -2.088462),
+          new google.maps.LatLng(51.888254, -2.088452),
+          new google.maps.LatLng(51.888250, -2.088497)
+        ],
+        description: "<p class='description-text'>The unisex bathrooms in the Waterworth Building are spacious and contain all the necessary amenities.</p>",
+        fillColor: "#eee5f8",
+        strokeColor: "#d4c1eb"
+      },
+      {
+        room: "WW114",
+        coordinates: [
+          new google.maps.LatLng(51.888347, -2.088475),
+          new google.maps.LatLng(51.888357, -2.088373),
+          new google.maps.LatLng(51.888264, -2.088350),
+          new google.maps.LatLng(51.888254, -2.088452)
+        ],
+        description: "<img src='assets/images/rooms/ww114.jpg' alt='WW114' class='description-image'><p class='description-text'>This room hosts computing lectures and laboratory sessions. Specialist forensic computing lectures are also primarily held here.</p>",
+        fillColor: "#fff8eb",
+        strokeColor: "#b8aca2"
       }
     ];
   }
 
-  get buildingPolygons(): {building: Number, color: String, coordinates: {}[]}[] {
+  get buildingPolygons(): {building: Number, coordinates: {}[], fillColor: String, strokeColor: String}[] {
     return this._buildingPolygons;
+  }
+
+  get roomPolygons(): {room: String, coordinates: {}[], description: String, fillColor: String, strokeColor: String}[] {
+    return this._roomPolygons;
   }
 }
