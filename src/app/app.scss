@@ -19,8 +19,35 @@ a {
   text-decoration: none;
 }
 
+.button[icon-only] {
+  min-width: 35px;
+}
+
+.card {
+  margin: 0 0 16px 0;
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex__item--maxwidth {
+  flex: 1;
+}
+
+.flex__item--minwidth {
+  flex: 0;
+}
+
 .item {
   padding: 0;
+}
+
+.item-text-wrap {
+  overflow: inherit;
+  text-overflow: inherit;
+  white-space: normal;
 }
 
 .input-cover {
@@ -35,7 +62,7 @@ a {
   }
 
   .select {
-    max-width: 45vw;
+    max-width: 60vw;
   }
 }
 
@@ -45,6 +72,10 @@ a {
   .item-inner {
     padding: 0 16px 0 16px;
   }
+}
+
+.scroll-content {
+  overflow-y: auto;
 }
 
 .wp {

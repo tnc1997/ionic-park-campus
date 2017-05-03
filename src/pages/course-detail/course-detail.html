@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{course.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2 text-center>Location</h2>
+  <p>{{course.building._name}}</p>
+  <h2 text-center>Synopsis</h2>
+  <div class="item-text-wrap" [innerHtml]="course.synopsis"></div>
+  <h2 text-center>Description</h2>
+  <div class="item-text-wrap" [innerHtml]="course.description"></div>
+</ion-content>

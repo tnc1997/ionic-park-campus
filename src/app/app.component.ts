@@ -1,9 +1,12 @@
 import {Component, ViewChild} from '@angular/core';
 import {Nav, Platform} from 'ionic-angular';
 import {StatusBar, Splashscreen} from 'ionic-native';
+import {CourseList} from '../pages/course-list/course-list';
 import {Home} from '../pages/home/home';
 import {Map} from '../pages/map/map';
-import {Setup} from '../pages/setup/setup';
+import {Settings} from '../pages/settings/settings';
+import {InstallationPage, MainPage} from '../pages/pages';
+import {SettingProvider} from '../providers/providers';
 
 @Component({
   templateUrl: 'app.html'
@@ -11,18 +14,27 @@ import {Setup} from '../pages/setup/setup';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = Home;
+  rootPage: any;
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform) {
+  constructor(public platform: Platform, public settingProvider: SettingProvider) {
     this.initializeApp();
 
     this.pages = [
       {title: 'Home', component: Home},
+      {title: 'Courses', component: CourseList},
       {title: 'Map', component: Map},
-      {title: 'Setup', component: Setup}
+      {title: 'Settings', component: Settings}
     ];
+
+    this.settingProvider.findAll().then((values) => {
+      if (values == 0) {
+        this.rootPage = InstallationPage;
+      } else {
+        this.rootPage = MainPage;
+      }
+    });
   }
 
   initializeApp() {

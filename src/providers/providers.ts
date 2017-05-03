@@ -1,9 +1,15 @@
-import {Buildings} from './buildings';
-import {Lectures} from './lectures';
-import {Modules} from './modules';
+import {BuildingProvider} from './buildings';
+import {CourseProvider} from './courses';
+import {LectureProvider} from './lectures';
+import {ModuleProvider} from './modules';
+import {PolygonProvider} from './polygons';
+import {SettingProvider} from './settings';
 
 export {
-  Buildings,
-  Lectures,
-  Modules
+  BuildingProvider,
+  CourseProvider,
+  LectureProvider,
+  ModuleProvider,
+  PolygonProvider,
+  SettingProvider
 }
