@@ -11,12 +11,28 @@ import {Building} from "../../models/building";
   selector: 'page-entity-list',
   templateUrl: 'entity-list.html'
 })
+
+/**
+ * The entity list page contains a list of all the entities in the application, such as lectures and modules.
+ */
 export class EntityList {
   entity: {name: String};
   entities: Object;
 
   days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
+  /**
+   * Fetches the type of entity from the navigation parameters and displays a list of all the data stored for that
+   * entity via the use of promises.
+   *
+   * @param {AlertController} alertCtrl controls the displaying of alerts in the application
+   * @param {ModalController} modalCtrl controls the displaying of modal pages in the application
+   * @param {NavController} navCtrl controls the navigation between pages in the application
+   * @param {NavParams} navParams stores the parameters passed between pages during navigation
+   * @param {BuildingProvider} buildingProvider contains CRUD methods to access building related data
+   * @param {LectureProvider} lectureProvider contains CRUD methods to access lecture related data
+   * @param {ModuleProvider} moduleProvider contains CRUD methods to access module related data
+   */
   constructor(public alertCtrl: AlertController, public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, public buildingProvider: BuildingProvider, public lectureProvider: LectureProvider, public moduleProvider: ModuleProvider) {
     this.entity = navParams.get("entity");
     this.entities = [];
@@ -37,6 +53,11 @@ export class EntityList {
     }
   }
 
+  /**
+   * Creates a modal, passing in the entity, which allows the user to create an entity of that type, such as a lecture
+   * or a module. Upon dismissal of the modal page, the entity is created using the relevant provider. Chained
+   * promises are used to create a lecture due to the asynchronous nature of the process involved.
+   */
   createEntity() {
     let createModal = this.modalCtrl.create(EntityCreate, {entity: this.entity});
     createModal.onDidDismiss((entity) => {
@@ -66,6 +87,13 @@ export class EntityList {
     createModal.present();
   }
 
+  /**
+   * Checks the type of entity present, before using the relevant provider to delete the selected entity. If the user
+   * has selected to delete a module then the application warns them that this will also delete the lecture that
+   * is attached to the selected module.
+   *
+   * @param entity the selected entity to be deleted, such as a lecture or a module
+   */
   deleteEntity(entity) {
     switch (this.entity.name) {
       case "Lectures":
@@ -95,6 +123,11 @@ export class EntityList {
     }
   }
 
+  /**
+   * Refreshes the view when the user swipes downwards and updates the list of entities displayed.
+   *
+   * @param refresher the object which controls the status of the refresh animation
+   */
   onRefresh(refresher) {
     setTimeout(() => {
       switch (this.entity.name) {
