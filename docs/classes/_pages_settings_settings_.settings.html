@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Setting | Park Campus</title>
+	<title>Settings | Park Campus</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_models_setting_.html">&quot;models/setting&quot;</a>
+					<a href="../modules/_pages_settings_settings_.html">&quot;pages/settings/settings&quot;</a>
 				</li>
 				<li>
-					<a href="_models_setting_.setting.html">Setting</a>
+					<a href="_pages_settings_settings_.settings.html">Settings</a>
 				</li>
 			</ul>
-			<h1>Class Setting</h1>
+			<h1>Class Settings</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Setting</span>
+						<span class="target">Settings</span>
 					</li>
 				</ul>
 			</section>
@@ -84,21 +84,23 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_models_setting_.setting.html#constructor" class="tsd-kind-icon">constructor</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_models_setting_.setting.html#_key" class="tsd-kind-icon">_key</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_models_setting_.setting.html#_value" class="tsd-kind-icon">_value</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_pages_settings_settings_.settings.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
-							<h3>Accessors</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="_models_setting_.setting.html#key" class="tsd-kind-icon">key</a></li>
-								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="_models_setting_.setting.html#value" class="tsd-kind-icon">value</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_pages_settings_settings_.settings.html#alertctrl" class="tsd-kind-icon">alert<wbr>Ctrl</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_pages_settings_settings_.settings.html#entities" class="tsd-kind-icon">entities</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_pages_settings_settings_.settings.html#navctrl" class="tsd-kind-icon">nav<wbr>Ctrl</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_pages_settings_settings_.settings.html#storage" class="tsd-kind-icon">storage</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_pages_settings_settings_.settings.html#erasedata" class="tsd-kind-icon">erase<wbr>Data</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_pages_settings_settings_.settings.html#openentity" class="tsd-kind-icon">open<wbr>Entity</a></li>
 							</ul>
 						</section>
 					</div>
@@ -110,112 +112,160 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Setting<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">String</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_models_setting_.setting.html" class="tsd-signature-type">Setting</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Settings<span class="tsd-signature-symbol">(</span>alertCtrl<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AlertController</span>, navCtrl<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NavController</span>, storage<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Storage</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_pages_settings_settings_.settings.html" class="tsd-signature-type">Settings</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/950a96e/src/models/setting.ts#L3">models/setting.ts:3</a></li>
+									<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/148dc5c/src/pages/settings/settings.ts#L17">pages/settings/settings.ts:17</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Defines the entities used by the application, such as lectures and modules.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>key: <span class="tsd-signature-type">String</span></h5>
+									<h5>alertCtrl: <span class="tsd-signature-type">AlertController</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>controls the displaying of alerts in the application</p>
+										</div>
+									</div>
 								</li>
 								<li>
-									<h5>value: <span class="tsd-signature-type">any</span></h5>
+									<h5>navCtrl: <span class="tsd-signature-type">NavController</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>controls the navigation between pages in the application</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5>storage: <span class="tsd-signature-type">Storage</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>the ionic storage api, used to interact with and store data</p>
+										</div>
+									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_models_setting_.setting.html" class="tsd-signature-type">Setting</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_pages_settings_settings_.settings.html" class="tsd-signature-type">Settings</a></h4>
 						</li>
 					</ul>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="_key" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _key</h3>
-					<div class="tsd-signature tsd-kind-icon">_key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">String</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/950a96e/src/models/setting.ts#L2">models/setting.ts:2</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="_value" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _value</h3>
-					<div class="tsd-signature tsd-kind-icon">_value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/950a96e/src/models/setting.ts#L3">models/setting.ts:3</a></li>
-						</ul>
-					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Accessors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
-					<a name="key" class="tsd-anchor"></a>
-					<h3>key</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> key<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">String</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> key<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">String</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="alertctrl" class="tsd-anchor"></a>
+					<h3>alert<wbr>Ctrl</h3>
+					<div class="tsd-signature tsd-kind-icon">alert<wbr>Ctrl<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">AlertController</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/148dc5c/src/pages/settings/settings.ts#L26">pages/settings/settings.ts:26</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>controls the displaying of alerts in the application</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="entities" class="tsd-anchor"></a>
+					<h3>entities</h3>
+					<div class="tsd-signature tsd-kind-icon">entities<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/148dc5c/src/pages/settings/settings.ts#L17">pages/settings/settings.ts:17</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="navctrl" class="tsd-anchor"></a>
+					<h3>nav<wbr>Ctrl</h3>
+					<div class="tsd-signature tsd-kind-icon">nav<wbr>Ctrl<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">NavController</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/148dc5c/src/pages/settings/settings.ts#L26">pages/settings/settings.ts:26</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>controls the navigation between pages in the application</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="storage" class="tsd-anchor"></a>
+					<h3>storage</h3>
+					<div class="tsd-signature tsd-kind-icon">storage<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Storage</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/148dc5c/src/pages/settings/settings.ts#L26">pages/settings/settings.ts:26</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>the ionic storage api, used to interact with and store data</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="erasedata" class="tsd-anchor"></a>
+					<h3>erase<wbr>Data</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">erase<wbr>Data<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/950a96e/src/models/setting.ts#L10">models/setting.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/148dc5c/src/pages/settings/settings.ts#L34">pages/settings/settings.ts:34</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">String</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/950a96e/src/models/setting.ts#L14">models/setting.ts:14</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <span class="tsd-signature-type">String</span></h5>
-								</li>
-							</ul>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>An alert is created which confirms with the user that all data will be removed by completing this action. If the
+									user clicks the erase option then the storage is completely cleared and the user is taken back to the setup.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
-					<a name="value" class="tsd-anchor"></a>
-					<h3>value</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> value<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> value<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="openentity" class="tsd-anchor"></a>
+					<h3>open<wbr>Entity</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">open<wbr>Entity<span class="tsd-signature-symbol">(</span>entity<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/950a96e/src/models/setting.ts#L18">models/setting.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/148dc5c/src/pages/settings/settings.ts#L61">pages/settings/settings.ts:61</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/950a96e/src/models/setting.ts#L22">models/setting.ts:22</a></li>
-								</ul>
-							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Pushes the entity list page onto the navigation stack, passing in the selected entity.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>value: <span class="tsd-signature-type">any</span></h5>
+									<h5>entity: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the course that the user has selected</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -231,7 +281,7 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="../modules/_models_setting_.html">"models/setting"</a>
+						<a href="../modules/_pages_settings_settings_.html">"pages/settings/settings"</a>
 					</li>
 				</ul>
 			</nav>
@@ -240,22 +290,28 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-external-module">
-						<a href="_models_setting_.setting.html" class="tsd-kind-icon">Setting</a>
+						<a href="_pages_settings_settings_.settings.html" class="tsd-kind-icon">Settings</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="_models_setting_.setting.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="_pages_settings_settings_.settings.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="_models_setting_.setting.html#_key" class="tsd-kind-icon">_key</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_pages_settings_settings_.settings.html#alertctrl" class="tsd-kind-icon">alert<wbr>Ctrl</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="_models_setting_.setting.html#_value" class="tsd-kind-icon">_value</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_pages_settings_settings_.settings.html#entities" class="tsd-kind-icon">entities</a>
 							</li>
-							<li class=" tsd-kind-accessor tsd-parent-kind-class">
-								<a href="_models_setting_.setting.html#key" class="tsd-kind-icon">key</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_pages_settings_settings_.settings.html#navctrl" class="tsd-kind-icon">nav<wbr>Ctrl</a>
 							</li>
-							<li class=" tsd-kind-accessor tsd-parent-kind-class">
-								<a href="_models_setting_.setting.html#value" class="tsd-kind-icon">value</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_pages_settings_settings_.settings.html#storage" class="tsd-kind-icon">storage</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_pages_settings_settings_.settings.html#erasedata" class="tsd-kind-icon">erase<wbr>Data</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_pages_settings_settings_.settings.html#openentity" class="tsd-kind-icon">open<wbr>Entity</a>
 							</li>
 						</ul>
 					</li>

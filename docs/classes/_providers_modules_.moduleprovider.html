@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Home | Park Campus</title>
+	<title>ModuleProvider | Park Campus</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_pages_home_home_.html">&quot;pages/home/home&quot;</a>
+					<a href="../modules/_providers_modules_.html">&quot;providers/modules&quot;</a>
 				</li>
 				<li>
-					<a href="_pages_home_home_.home.html">Home</a>
+					<a href="_providers_modules_.moduleprovider.html">ModuleProvider</a>
 				</li>
 			</ul>
-			<h1>Class Home</h1>
+			<h1>Class ModuleProvider</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Home</span>
+						<span class="target">ModuleProvider</span>
 					</li>
 				</ul>
 			</section>
@@ -84,24 +84,23 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_pages_home_home_.home.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_providers_modules_.moduleprovider.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_pages_home_home_.home.html#days" class="tsd-kind-icon">days</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_pages_home_home_.home.html#lectureprovider" class="tsd-kind-icon">lecture<wbr>Provider</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_pages_home_home_.home.html#lectures" class="tsd-kind-icon">lectures</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_pages_home_home_.home.html#navctrl" class="tsd-kind-icon">nav<wbr>Ctrl</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_pages_home_home_.home.html#nextlectures" class="tsd-kind-icon">next<wbr>Lectures</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_modules_.moduleprovider.html#lectureprovider" class="tsd-kind-icon">lecture<wbr>Provider</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_modules_.moduleprovider.html#storage" class="tsd-kind-icon">storage</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_pages_home_home_.home.html#onclickdirections" class="tsd-kind-icon">on<wbr>Click<wbr>Directions</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_pages_home_home_.home.html#getnextdayofweek" class="tsd-kind-icon">get<wbr>Next<wbr>Day<wbr>OfWeek</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_providers_modules_.moduleprovider.html#createmodule" class="tsd-kind-icon">create<wbr>Module</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_providers_modules_.moduleprovider.html#deletemodule" class="tsd-kind-icon">delete<wbr>Module</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_providers_modules_.moduleprovider.html#findall" class="tsd-kind-icon">find<wbr>All</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_providers_modules_.moduleprovider.html#findbycode" class="tsd-kind-icon">find<wbr>ByCode</a></li>
 							</ul>
 						</section>
 					</div>
@@ -113,45 +112,29 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Home<span class="tsd-signature-symbol">(</span>navCtrl<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NavController</span>, lectureProvider<span class="tsd-signature-symbol">: </span><a href="_providers_lectures_.lectureprovider.html" class="tsd-signature-type">LectureProvider</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_pages_home_home_.home.html" class="tsd-signature-type">Home</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Module<wbr>Provider<span class="tsd-signature-symbol">(</span>storage<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Storage</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_providers_modules_.moduleprovider.html" class="tsd-signature-type">ModuleProvider</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/950a96e/src/pages/home/home.ts#L21">pages/home/home.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/148dc5c/src/providers/modules.ts#L16">providers/modules.ts:16</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Fetches a list of lectures using the lecture provider and stores the returned data in the lectures array. Then,
-										the current date is found and all the lectures in the array are iterated over comparing the duration between
-										the lecture date and current date. A custom time class has been used to avoid the excess bloat in the default
-										date class. If the calculated duration is less than the current duration then the calculated duration is
-										stored in the current duration variable and the lecture stored in the next lectures array is updated. An array
-									has been used due to inconsistencies between the page loading and the execution of the returned promise.</p>
-								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>navCtrl: <span class="tsd-signature-type">NavController</span></h5>
+									<h5>storage: <span class="tsd-signature-type">Storage</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>controls the navigation between pages in the application</p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<h5>lectureProvider: <a href="_providers_lectures_.lectureprovider.html" class="tsd-signature-type">LectureProvider</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>contains CRUD methods to access lecture related data</p>
+											<p>the class containing methods which facilitate interaction with the user&#39;s storage</p>
 										</div>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_pages_home_home_.home.html" class="tsd-signature-type">Home</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_providers_modules_.moduleprovider.html" class="tsd-signature-type">ModuleProvider</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -159,93 +142,62 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="days" class="tsd-anchor"></a>
-					<h3>days</h3>
-					<div class="tsd-signature tsd-kind-icon">days<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;[&quot;Sunday&quot;, &quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/950a96e/src/pages/home/home.ts#L21">pages/home/home.ts:21</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="lectureprovider" class="tsd-anchor"></a>
 					<h3>lecture<wbr>Provider</h3>
 					<div class="tsd-signature tsd-kind-icon">lecture<wbr>Provider<span class="tsd-signature-symbol">:</span> <a href="_providers_lectures_.lectureprovider.html" class="tsd-signature-type">LectureProvider</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/950a96e/src/pages/home/home.ts#L34">pages/home/home.ts:34</a></li>
+							<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/148dc5c/src/providers/modules.ts#L16">providers/modules.ts:16</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>contains CRUD methods to access lecture related data</p>
+							<p>Stores an instance of the lecture provider class to be used by the module provider.</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="lectures" class="tsd-anchor"></a>
-					<h3>lectures</h3>
-					<div class="tsd-signature tsd-kind-icon">lectures<span class="tsd-signature-symbol">:</span> <a href="_models_lecture_.lecture.html" class="tsd-signature-type">Lecture</a><span class="tsd-signature-symbol">[]</span></div>
+					<a name="storage" class="tsd-anchor"></a>
+					<h3>storage</h3>
+					<div class="tsd-signature tsd-kind-icon">storage<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Storage</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/950a96e/src/pages/home/home.ts#L18">pages/home/home.ts:18</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="navctrl" class="tsd-anchor"></a>
-					<h3>nav<wbr>Ctrl</h3>
-					<div class="tsd-signature tsd-kind-icon">nav<wbr>Ctrl<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">NavController</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/950a96e/src/pages/home/home.ts#L34">pages/home/home.ts:34</a></li>
+							<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/148dc5c/src/providers/modules.ts#L21">providers/modules.ts:21</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>controls the navigation between pages in the application</p>
+							<p>the class containing methods which facilitate interaction with the user&#39;s storage</p>
 						</div>
 					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="nextlectures" class="tsd-anchor"></a>
-					<h3>next<wbr>Lectures</h3>
-					<div class="tsd-signature tsd-kind-icon">next<wbr>Lectures<span class="tsd-signature-symbol">:</span> <a href="_models_lecture_.lecture.html" class="tsd-signature-type">Lecture</a><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/950a96e/src/pages/home/home.ts#L19">pages/home/home.ts:19</a></li>
-						</ul>
-					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="onclickdirections" class="tsd-anchor"></a>
-					<h3>on<wbr>Click<wbr>Directions</h3>
+					<a name="createmodule" class="tsd-anchor"></a>
+					<h3>create<wbr>Module</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">on<wbr>Click<wbr>Directions<span class="tsd-signature-symbol">(</span>lecture<span class="tsd-signature-symbol">: </span><a href="_models_lecture_.lecture.html" class="tsd-signature-type">Lecture</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Module<span class="tsd-signature-symbol">(</span>module<span class="tsd-signature-symbol">: </span><a href="_models_module_.module.html" class="tsd-signature-type">Module</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/950a96e/src/pages/home/home.ts#L80">pages/home/home.ts:80</a></li>
+									<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/148dc5c/src/providers/modules.ts#L30">providers/modules.ts:30</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Loads the map page, passing in the origin as the user&#39;s current location and the destination as the latitude and
-									longitude of the building where the selected lecture is held.</p>
+									<p>Takes the provided module and uses Ionic Storage to add it to the device&#39;s storage.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>lecture: <a href="_models_lecture_.lecture.html" class="tsd-signature-type">Lecture</a></h5>
+									<h5>module: <a href="_models_module_.module.html" class="tsd-signature-type">Module</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the selected lecture to display directions on the map page to</p>
+										<p>the module to add to the storage</p>
 									</div>
 								</li>
 							</ul>
@@ -253,46 +205,89 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="getnextdayofweek" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Next<wbr>Day<wbr>OfWeek</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Next<wbr>Day<wbr>OfWeek<span class="tsd-signature-symbol">(</span>date<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span>, dayOfWeek<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="deletemodule" class="tsd-anchor"></a>
+					<h3>delete<wbr>Module</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">delete<wbr>Module<span class="tsd-signature-symbol">(</span>module<span class="tsd-signature-symbol">: </span><a href="_models_module_.module.html" class="tsd-signature-type">Module</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/950a96e/src/pages/home/home.ts#L66">pages/home/home.ts:66</a></li>
+									<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/148dc5c/src/providers/modules.ts#L47">providers/modules.ts:47</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Gets the next occurring day of week, given a specific date. Adapted from Alba, P. G. (2013).</p>
+									<p>Takes the provided module and uses Ionic Storage to remove it from the device&#39;s storage.</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>see</dt>
-									<dd><p><a href="http://codereview.stackexchange.com/questions/33527/find-next-occurring-friday-or-any-dayofweek">Find Next Occurring Day Of Week</a></p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>date: <span class="tsd-signature-type">Date</span></h5>
+									<h5>module: <a href="_models_module_.module.html" class="tsd-signature-type">Module</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the current date</p>
-									</div>
-								</li>
-								<li>
-									<h5>dayOfWeek: <span class="tsd-signature-type">Number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the day of week of the lecture</p>
+										<p>the module to remove from the storage</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4>
-							<p>the date of the next instance of the lecture</p>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="findall" class="tsd-anchor"></a>
+					<h3>find<wbr>All</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">find<wbr>All<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/148dc5c/src/providers/modules.ts#L72">providers/modules.ts:72</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Uses Ionic Storage to find all modules stored in the device&#39;s storage.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>contains the modules retrieved from the storage</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="findbycode" class="tsd-anchor"></a>
+					<h3>find<wbr>ByCode</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">find<wbr>ByCode<span class="tsd-signature-symbol">(</span>code<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">String</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/148dc5c/src/providers/modules.ts#L96">providers/modules.ts:96</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Takes the provided code and uses it to find the associated module stored in the device&#39;s storage.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>code: <span class="tsd-signature-type">String</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the code to search for the module using</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>contains the module retrieved from the storage</p>
 						</li>
 					</ul>
 				</section>
@@ -305,7 +300,7 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="../modules/_pages_home_home_.html">"pages/home/home"</a>
+						<a href="../modules/_providers_modules_.html">"providers/modules"</a>
 					</li>
 				</ul>
 			</nav>
@@ -314,31 +309,28 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-external-module">
-						<a href="_pages_home_home_.home.html" class="tsd-kind-icon">Home</a>
+						<a href="_providers_modules_.moduleprovider.html" class="tsd-kind-icon">Module<wbr>Provider</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="_pages_home_home_.home.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="_providers_modules_.moduleprovider.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_pages_home_home_.home.html#days" class="tsd-kind-icon">days</a>
+								<a href="_providers_modules_.moduleprovider.html#lectureprovider" class="tsd-kind-icon">lecture<wbr>Provider</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_pages_home_home_.home.html#lectureprovider" class="tsd-kind-icon">lecture<wbr>Provider</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_pages_home_home_.home.html#lectures" class="tsd-kind-icon">lectures</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_pages_home_home_.home.html#navctrl" class="tsd-kind-icon">nav<wbr>Ctrl</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_pages_home_home_.home.html#nextlectures" class="tsd-kind-icon">next<wbr>Lectures</a>
+								<a href="_providers_modules_.moduleprovider.html#storage" class="tsd-kind-icon">storage</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_pages_home_home_.home.html#onclickdirections" class="tsd-kind-icon">on<wbr>Click<wbr>Directions</a>
+								<a href="_providers_modules_.moduleprovider.html#createmodule" class="tsd-kind-icon">create<wbr>Module</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="_pages_home_home_.home.html#getnextdayofweek" class="tsd-kind-icon">get<wbr>Next<wbr>Day<wbr>OfWeek</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_providers_modules_.moduleprovider.html#deletemodule" class="tsd-kind-icon">delete<wbr>Module</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_providers_modules_.moduleprovider.html#findall" class="tsd-kind-icon">find<wbr>All</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_providers_modules_.moduleprovider.html#findbycode" class="tsd-kind-icon">find<wbr>ByCode</a>
 							</li>
 						</ul>
 					</li>

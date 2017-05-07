@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>MapPopover | Park Campus</title>
+	<title>LectureProvider | Park Campus</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_pages_map_popover_map_popover_.html">&quot;pages/map-popover/map-popover&quot;</a>
+					<a href="../modules/_providers_lectures_.html">&quot;providers/lectures&quot;</a>
 				</li>
 				<li>
-					<a href="_pages_map_popover_map_popover_.mappopover.html">MapPopover</a>
+					<a href="_providers_lectures_.lectureprovider.html">LectureProvider</a>
 				</li>
 			</ul>
-			<h1>Class MapPopover</h1>
+			<h1>Class LectureProvider</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">MapPopover</span>
+						<span class="target">LectureProvider</span>
 					</li>
 				</ul>
 			</section>
@@ -84,26 +84,22 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_pages_map_popover_map_popover_.mappopover.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_providers_lectures_.lectureprovider.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_pages_map_popover_map_popover_.mappopover.html#directionsrenderer" class="tsd-kind-icon">directions<wbr>Renderer</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_pages_map_popover_map_popover_.mappopover.html#displayoverlay" class="tsd-kind-icon">display<wbr>Overlay</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_pages_map_popover_map_popover_.mappopover.html#map" class="tsd-kind-icon">map</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_pages_map_popover_map_popover_.mappopover.html#mappolygons" class="tsd-kind-icon">map<wbr>Polygons</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_pages_map_popover_map_popover_.mappopover.html#navctrl" class="tsd-kind-icon">nav<wbr>Ctrl</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_pages_map_popover_map_popover_.mappopover.html#navparams" class="tsd-kind-icon">nav<wbr>Params</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_pages_map_popover_map_popover_.mappopover.html#toggleinitialized" class="tsd-kind-icon">toggle<wbr>Initialized</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_lectures_.lectureprovider.html#storage" class="tsd-kind-icon">storage</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_pages_map_popover_map_popover_.mappopover.html#cleardirections" class="tsd-kind-icon">clear<wbr>Directions</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_pages_map_popover_map_popover_.mappopover.html#onoverlaytogglechange" class="tsd-kind-icon">on<wbr>Overlay<wbr>Toggle<wbr>Change</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_providers_lectures_.lectureprovider.html#createlecture" class="tsd-kind-icon">create<wbr>Lecture</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_providers_lectures_.lectureprovider.html#deletelecture" class="tsd-kind-icon">delete<wbr>Lecture</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_providers_lectures_.lectureprovider.html#findall" class="tsd-kind-icon">find<wbr>All</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_providers_lectures_.lectureprovider.html#findbymodule" class="tsd-kind-icon">find<wbr>ByModule</a></li>
 							</ul>
 						</section>
 					</div>
@@ -115,40 +111,29 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Map<wbr>Popover<span class="tsd-signature-symbol">(</span>navCtrl<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NavController</span>, navParams<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NavParams</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_pages_map_popover_map_popover_.mappopover.html" class="tsd-signature-type">MapPopover</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Lecture<wbr>Provider<span class="tsd-signature-symbol">(</span>storage<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Storage</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_providers_lectures_.lectureprovider.html" class="tsd-signature-type">LectureProvider</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/950a96e/src/pages/map-popover/map-popover.ts#L18">pages/map-popover/map-popover.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/148dc5c/src/providers/lectures.ts#L11">providers/lectures.ts:11</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Initialises the directions renderer, map, map polygons and display overlay variables.</p>
-								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>navCtrl: <span class="tsd-signature-type">NavController</span></h5>
+									<h5>storage: <span class="tsd-signature-type">Storage</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>controls the navigation between pages in the application</p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<h5>navParams: <span class="tsd-signature-type">NavParams</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>stores the parameters passed between pages during navigation</p>
+											<p>the class containing methods which facilitate interaction with the user&#39;s storage</p>
 										</div>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_pages_map_popover_map_popover_.mappopover.html" class="tsd-signature-type">MapPopover</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_providers_lectures_.lectureprovider.html" class="tsd-signature-type">LectureProvider</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -156,131 +141,137 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="directionsrenderer" class="tsd-anchor"></a>
-					<h3>directions<wbr>Renderer</h3>
-					<div class="tsd-signature tsd-kind-icon">directions<wbr>Renderer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<a name="storage" class="tsd-anchor"></a>
+					<h3>storage</h3>
+					<div class="tsd-signature tsd-kind-icon">storage<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Storage</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/950a96e/src/pages/map-popover/map-popover.ts#L14">pages/map-popover/map-popover.ts:14</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="displayoverlay" class="tsd-anchor"></a>
-					<h3>display<wbr>Overlay</h3>
-					<div class="tsd-signature tsd-kind-icon">display<wbr>Overlay<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/950a96e/src/pages/map-popover/map-popover.ts#L15">pages/map-popover/map-popover.ts:15</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="map" class="tsd-anchor"></a>
-					<h3>map</h3>
-					<div class="tsd-signature tsd-kind-icon">map<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/950a96e/src/pages/map-popover/map-popover.ts#L16">pages/map-popover/map-popover.ts:16</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="mappolygons" class="tsd-anchor"></a>
-					<h3>map<wbr>Polygons</h3>
-					<div class="tsd-signature tsd-kind-icon">map<wbr>Polygons<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/950a96e/src/pages/map-popover/map-popover.ts#L17">pages/map-popover/map-popover.ts:17</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="navctrl" class="tsd-anchor"></a>
-					<h3>nav<wbr>Ctrl</h3>
-					<div class="tsd-signature tsd-kind-icon">nav<wbr>Ctrl<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">NavController</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/950a96e/src/pages/map-popover/map-popover.ts#L26">pages/map-popover/map-popover.ts:26</a></li>
+							<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/148dc5c/src/providers/lectures.ts#L15">providers/lectures.ts:15</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>controls the navigation between pages in the application</p>
+							<p>the class containing methods which facilitate interaction with the user&#39;s storage</p>
 						</div>
 					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="navparams" class="tsd-anchor"></a>
-					<h3>nav<wbr>Params</h3>
-					<div class="tsd-signature tsd-kind-icon">nav<wbr>Params<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">NavParams</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/950a96e/src/pages/map-popover/map-popover.ts#L26">pages/map-popover/map-popover.ts:26</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>stores the parameters passed between pages during navigation</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="toggleinitialized" class="tsd-anchor"></a>
-					<h3>toggle<wbr>Initialized</h3>
-					<div class="tsd-signature tsd-kind-icon">toggle<wbr>Initialized<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/950a96e/src/pages/map-popover/map-popover.ts#L18">pages/map-popover/map-popover.ts:18</a></li>
-						</ul>
-					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="cleardirections" class="tsd-anchor"></a>
-					<h3>clear<wbr>Directions</h3>
+					<a name="createlecture" class="tsd-anchor"></a>
+					<h3>create<wbr>Lecture</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">clear<wbr>Directions<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Lecture<span class="tsd-signature-symbol">(</span>lecture<span class="tsd-signature-symbol">: </span><a href="_models_lecture_.lecture.html" class="tsd-signature-type">Lecture</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/950a96e/src/pages/map-popover/map-popover.ts#L39">pages/map-popover/map-popover.ts:39</a></li>
+									<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/148dc5c/src/providers/lectures.ts#L24">providers/lectures.ts:24</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Clears the currently displayed directions by nullifying the map of the directions renderer.</p>
+									<p>Takes the provided lecture and uses Ionic Storage to add it to the device&#39;s storage.</p>
 								</div>
 							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>lecture: <a href="_models_lecture_.lecture.html" class="tsd-signature-type">Lecture</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the lecture to add to the storage</p>
+									</div>
+								</li>
+							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="onoverlaytogglechange" class="tsd-anchor"></a>
-					<h3>on<wbr>Overlay<wbr>Toggle<wbr>Change</h3>
+					<a name="deletelecture" class="tsd-anchor"></a>
+					<h3>delete<wbr>Lecture</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">on<wbr>Overlay<wbr>Toggle<wbr>Change<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">delete<wbr>Lecture<span class="tsd-signature-symbol">(</span>lecture<span class="tsd-signature-symbol">: </span><a href="_models_lecture_.lecture.html" class="tsd-signature-type">Lecture</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/950a96e/src/pages/map-popover/map-popover.ts#L48">pages/map-popover/map-popover.ts:48</a></li>
+									<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/148dc5c/src/providers/lectures.ts#L41">providers/lectures.ts:41</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>If the toggle is initialised and display overlay is set to true then add each building polygon to the map in
-										addition to each room polygon on floor number zero. If only the toggle is initialised then remove all of the
-									polygons displayed by nullifying their map.</p>
+									<p>Takes the provided lecture and uses Ionic Storage to remove it from the device&#39;s storage.</p>
 								</div>
 							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>lecture: <a href="_models_lecture_.lecture.html" class="tsd-signature-type">Lecture</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the lecture to remove from the storage</p>
+									</div>
+								</li>
+							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="findall" class="tsd-anchor"></a>
+					<h3>find<wbr>All</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">find<wbr>All<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/148dc5c/src/providers/lectures.ts#L62">providers/lectures.ts:62</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Uses Ionic Storage to find all lectures stored in the device&#39;s storage.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>contains the lectures retrieved from the storage</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="findbymodule" class="tsd-anchor"></a>
+					<h3>find<wbr>ByModule</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">find<wbr>ByModule<span class="tsd-signature-symbol">(</span>module<span class="tsd-signature-symbol">: </span><a href="_models_module_.module.html" class="tsd-signature-type">Module</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tnc1997/park-campus/blob/148dc5c/src/providers/lectures.ts#L86">providers/lectures.ts:86</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Takes the provided module and uses it to find the associated lecture stored in the device&#39;s storage.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>module: <a href="_models_module_.module.html" class="tsd-signature-type">Module</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the module to search for the lecture using</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>contains the lecture retrieved from the storage</p>
 						</li>
 					</ul>
 				</section>
@@ -293,7 +284,7 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="../modules/_pages_map_popover_map_popover_.html">"pages/map-<wbr>popover/map-<wbr>popover"</a>
+						<a href="../modules/_providers_lectures_.html">"providers/lectures"</a>
 					</li>
 				</ul>
 			</nav>
@@ -302,37 +293,25 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-external-module">
-						<a href="_pages_map_popover_map_popover_.mappopover.html" class="tsd-kind-icon">Map<wbr>Popover</a>
+						<a href="_providers_lectures_.lectureprovider.html" class="tsd-kind-icon">Lecture<wbr>Provider</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="_pages_map_popover_map_popover_.mappopover.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="_providers_lectures_.lectureprovider.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_pages_map_popover_map_popover_.mappopover.html#directionsrenderer" class="tsd-kind-icon">directions<wbr>Renderer</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_pages_map_popover_map_popover_.mappopover.html#displayoverlay" class="tsd-kind-icon">display<wbr>Overlay</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_pages_map_popover_map_popover_.mappopover.html#map" class="tsd-kind-icon">map</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_pages_map_popover_map_popover_.mappopover.html#mappolygons" class="tsd-kind-icon">map<wbr>Polygons</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_pages_map_popover_map_popover_.mappopover.html#navctrl" class="tsd-kind-icon">nav<wbr>Ctrl</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_pages_map_popover_map_popover_.mappopover.html#navparams" class="tsd-kind-icon">nav<wbr>Params</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_pages_map_popover_map_popover_.mappopover.html#toggleinitialized" class="tsd-kind-icon">toggle<wbr>Initialized</a>
+								<a href="_providers_lectures_.lectureprovider.html#storage" class="tsd-kind-icon">storage</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_pages_map_popover_map_popover_.mappopover.html#cleardirections" class="tsd-kind-icon">clear<wbr>Directions</a>
+								<a href="_providers_lectures_.lectureprovider.html#createlecture" class="tsd-kind-icon">create<wbr>Lecture</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_pages_map_popover_map_popover_.mappopover.html#onoverlaytogglechange" class="tsd-kind-icon">on<wbr>Overlay<wbr>Toggle<wbr>Change</a>
+								<a href="_providers_lectures_.lectureprovider.html#deletelecture" class="tsd-kind-icon">delete<wbr>Lecture</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_providers_lectures_.lectureprovider.html#findall" class="tsd-kind-icon">find<wbr>All</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_providers_lectures_.lectureprovider.html#findbymodule" class="tsd-kind-icon">find<wbr>ByModule</a>
 							</li>
 						</ul>
 					</li>
