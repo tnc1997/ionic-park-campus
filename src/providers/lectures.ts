@@ -1,15 +1,26 @@
 import {Injectable} from '@angular/core';
-import {Http} from '@angular/http';
 import {Storage} from '@ionic/storage';
 import {Lecture} from '../models/lecture';
 import {Module} from '../models/module';
 
 @Injectable()
+
+/**
+ * Used by the application to interact with the lectures stored on the user's device.
+ */
 export class LectureProvider {
-  constructor(public http: Http, public storage: Storage) {
+  /**
+   * @param {Storage} storage the class containing methods which facilitate interaction with the user's storage
+   */
+  constructor(public storage: Storage) {
 
   }
 
+  /**
+   * Takes the provided lecture and uses Ionic Storage to add it to the device's storage.
+   *
+   * @param {Lecture} lecture the lecture to add to the storage
+   */
   createLecture(lecture: Lecture) {
     this.storage.get('_lectures').then((values) => {
       if (values == null) {
@@ -22,6 +33,11 @@ export class LectureProvider {
     });
   }
 
+  /**
+   * Takes the provided lecture and uses Ionic Storage to remove it from the device's storage.
+   *
+   * @param {Lecture} lecture the lecture to remove from the storage
+   */
   deleteLecture(lecture: Lecture) {
     this.storage.get('_lectures').then((values) => {
       if (values != null) {
@@ -38,6 +54,11 @@ export class LectureProvider {
     });
   }
 
+  /**
+   * Uses Ionic Storage to find all lectures stored in the device's storage.
+   *
+   * @returns {Promise} contains the lectures retrieved from the storage
+   */
   findAll() {
     return new Promise((resolve, reject) => {
       this.storage.get('_lectures').then((values) => {
@@ -56,6 +77,12 @@ export class LectureProvider {
     });
   }
 
+  /**
+   * Takes the provided module and uses it to find the associated lecture stored in the device's storage.
+   *
+   * @param module the module to search for the lecture using
+   * @returns {Promise} contains the lecture retrieved from the storage
+   */
   findByModule(module: Module) {
     return new Promise((resolve, reject) => {
       this.findAll().then((values: Lecture[]) => {

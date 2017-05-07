@@ -3,10 +3,17 @@ import {Injectable} from '@angular/core';
 declare let google;
 
 @Injectable()
+
+/**
+ * Used by the application to get the polygons stored in the application.
+ */
 export class PolygonProvider {
   private _buildingPolygons: {building: Number, coordinates: {}[], fillColor: String, strokeColor: String}[];
   private _roomPolygons: {room: String, coordinates: {}[], description: String, fillColor: String, strokeColor: String}[];
 
+  /**
+   * Populates the building polygon and room polygon arrays with data for Park Campus and Waterworth Building.
+   */
   constructor() {
     this._buildingPolygons = [
       {
