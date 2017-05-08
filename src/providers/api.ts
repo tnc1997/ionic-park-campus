@@ -15,7 +15,7 @@ export class Api {
    *
    * @type {String}
    */
-  url: String = "http://ct5006-g7.studentsites.glos.ac.uk/api";
+  url: String = "https://ct5006-g7.studentsites.glos.ac.uk/api";
 
   /**
    * @param {Http} http the protocol used for communication with the server
